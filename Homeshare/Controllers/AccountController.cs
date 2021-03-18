@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Homeshare.Models;
+using Homeshare.Repositories;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,7 +14,9 @@ namespace Homeshare.Controllers
         // GET: Account
         public ActionResult Register()
         {
-            return View();
+
+            RegisterViewModel rvm = new RegisterViewModel();
+            return View(rvm);
         }
     }
 }

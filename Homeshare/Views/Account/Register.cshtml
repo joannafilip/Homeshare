@@ -1,4 +1,5 @@
-﻿<div class="inside-banner">
+﻿@model Homeshare.Models.RegisterViewModel
+<div class="inside-banner">
     <div class="container">
         <span class="pull-right"><a href="#">Home</a> / Register</span>
         <h2>Register</h2>
@@ -12,15 +13,22 @@
         <div class="row register">
             <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
 
+                <form>
+                    <input type="text" class="form-control" placeholder="Firstname" name="Prenom">
+                    <input type="text" class="form-control" placeholder="Lastname" name="Nom">
+                    <input type="email" class="form-control" placeholder="Email" name="Email">
+                    <input type="text" class="form-control" placeholder="Phone" name="Telephone">
+                    <input type="text" class="form-control" placeholder="Login" name="Login">
+                    <input type="password" class="form-control" placeholder="Password" name="Password">
+                    <select name="PaysListModel">
+                        @foreach (Homeshare.Models.PaysListModel item in Model.PaysListModel)
+                        {
+                            <option value=@item.IdPays>@item.Libelle</option>
+                        }
+                    </select>
 
-                <input type="text" class="form-control" placeholder="Full Name" name="form_name">
-                <input type="text" class="form-control" placeholder="Enter Email" name="form_email">
-                <input type="password" class="form-control" placeholder="Password" name="form_phone">
-                <input type="password" class="form-control" placeholder="Confirm Password" name="form_phone">
-
-                <textarea rows="6" class="form-control" placeholder="Address" name="form_message"></textarea>
-                <button type="submit" class="btn btn-success" name="Submit">Register</button>
-
+                    <button type="submit" class="btn btn-success" name="Submit">Register</button>
+                </form>
 
 
 
