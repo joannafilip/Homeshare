@@ -7,7 +7,7 @@
 	[Telephone] [nvarchar](20) NOT NULL,
 	[Login] NVARCHAR(50) NULL,
 	[Password] NVARCHAR(256) NULL,
- [Salt] CHAR(8) NULL, 
+    [Salt] CHAR(8) NULL, 
     CONSTRAINT [PK_membre] PRIMARY KEY CLUSTERED 
 (
 	[idMembre] ASC

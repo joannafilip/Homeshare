@@ -32,20 +32,21 @@ namespace Homeshare.Controllers
                 {
                     //SessionUtils.IsLogged = true;
                    
-                    return RedirectToAction("Index", "Home"/*, new { area = "Member" }*/);
+                    return RedirectToAction("Index", "Home", new { area = "Member" });
                 }
                 else
                 {
                     ViewBag.ErrorMessage = "Try once again!";
-                    return RedirectToAction("Register", "Account"/*, new { area = "Member" }*/);
+                    return View();
                 }
                  
             }
             else
                 {
                     ViewBag.ErrorMessage = "Sign Up error";
-                    return View();
-                }
+                    RegisterViewModel rvm = new RegisterViewModel();
+                    return View(rvm);
+            }
                 
            
         }
