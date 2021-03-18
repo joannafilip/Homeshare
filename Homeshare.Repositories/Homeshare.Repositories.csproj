@@ -45,6 +45,7 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="PaysListRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Homeshare.DAL\Homeshare.DAL.csproj">
