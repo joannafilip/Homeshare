@@ -48,6 +48,9 @@ namespace Homeshare.Repositories
 
         }
 
+        //public RegisterModel UserAuth(LoginModel lm)
+        //{
+
 
     }
 }
