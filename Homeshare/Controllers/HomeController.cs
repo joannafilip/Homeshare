@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Homeshare.Infra;
+using Homeshare.Models;
+using Homeshare.Repositories;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,15 +12,41 @@ namespace Homeshare.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            HomeViewModel hm = new HomeViewModel();
+            return View(hm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(LoginModel lm)
+        {
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            if (ModelState.IsValid)
+            {
+                RegisterModel rm = ctx.UserAuth(lm);
+                if (rm == null)
+                {
+                    ViewBag.Error = "Erreur Login/Password";
+                    return View();
+                }
+                else
+                {
+                    SessionUtils.IsLogged = true;
+                    SessionUtils.ConnectedUser = rm;
+                    return RedirectToAction("Index", "Home", new { area = "Member" });
+                }
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
         public ActionResult Agents()
@@ -30,8 +60,6 @@ namespace Homeshare.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
         public ActionResult Buy()

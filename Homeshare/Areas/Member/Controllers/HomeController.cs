@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Homeshare.Infra;
+using Homeshare.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,7 @@ namespace Homeshare.Areas.Member.Controllers
         // GET: Member/Home
         public ActionResult Index()
         {
-            return View();
+            return View(SessionUtils.ConnectedUser);
         }
     }
 }

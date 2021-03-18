@@ -48,9 +48,26 @@ namespace Homeshare.Repositories
 
         }
 
-        //public RegisterModel UserAuth(LoginModel lm)
-        //{
+        public RegisterModel UserAuth(LoginModel lm)
+        {
+            RegisterEntity re = ((RegisterRepository)_registerRepo).GetFromLogin(lm.Login, lm.Password);
+            if (re == null) return null;
+            if (re != null)
+            {
+                return new RegisterModel()
+                {
+                    Nom = re.Nom,
+                    Prenom = re.Prenom,
+                    Login = re.Login,
+                    Email = re.Email,
+                    
+                };
+            }
+            else
+            {
+                return null;
+            }
 
-
+        }
     }
 }

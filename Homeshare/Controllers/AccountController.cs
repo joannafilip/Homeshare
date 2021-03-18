@@ -1,4 +1,5 @@
-﻿using Homeshare.Models;
+﻿using Homeshare.Infra;
+using Homeshare.Models;
 using Homeshare.Repositories;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,7 @@ namespace Homeshare.Controllers
                 DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
                 if (ctx.SaveSignUp(rm, pm))
                 {
-                    //SessionUtils.IsLogged = true;
-                   
+                    SessionUtils.IsLogged = true;
                     return RedirectToAction("Index", "Home", new { area = "Member" });
                 }
                 else
