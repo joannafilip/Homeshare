@@ -54,12 +54,17 @@ namespace Homeshare.Repositories
             if (re == null) return null;
             if (re != null)
             {
+                PaysListModel plm = new PaysListModel();
                 return new RegisterModel()
                 {
+                   
                     Nom = re.Nom,
                     Prenom = re.Prenom,
                     Login = re.Login,
                     Email = re.Email,
+                    Telephone = re.Telephone,
+                    Pays = re.Libelle
+                    
                     
                 };
             }

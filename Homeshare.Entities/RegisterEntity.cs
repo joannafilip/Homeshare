@@ -8,7 +8,7 @@ namespace Homeshare.Entities
 {
     public class RegisterEntity
     {
-        private string _nom, _prenom, _email, _login, _password, _telephone;
+        private string _nom, _prenom, _email, _login, _password, _telephone, _libelle;
         private int _idPays;
 
 
@@ -97,6 +97,18 @@ namespace Homeshare.Entities
             set
             {
                 _idPays = value;
+            }
+        }
+        public string Libelle
+        {
+            get
+            {
+                return _libelle;
+            }
+
+            set
+            {
+                _libelle = value;
             }
         }
 

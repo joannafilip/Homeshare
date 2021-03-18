@@ -9,8 +9,8 @@ namespace Homeshare.Models
 {
     public class RegisterModel
     {
-        private string _nom, _prenom, _email, _login, _password, _telephone;
-        private PaysListModel _paysListModel;
+        private string _nom, _prenom, _email, _login, _password, _telephone, _pays;
+
 
         [Required]
         [MaxLength(50)]
@@ -95,16 +95,16 @@ namespace Homeshare.Models
                 _telephone = value;
             }
         }
-        public PaysListModel PaysListModel
+        public string Pays
         {
             get
             {
-                return _paysListModel;
+                return _pays;
             }
 
             set
             {
-                _paysListModel = value;
+                _pays = value;
             }
         }
     }
