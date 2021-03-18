@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homeshare", "Homeshare\Homeshare.csproj", "{6E97D477-FCAC-4A7E-9138-D8D64979CF77}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HomeshareBD", "HomeshareBD\HomeshareBD.sqlproj", "{2F8D53C3-175B-4A87-8548-77B33D089E09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homeshare.DAL", "Homeshare.DAL\Homeshare.DAL.csproj", "{B435B4A1-B241-4FC1-A2FB-DC1A13692B94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homeshare.Entities", "Homeshare.Entities\Homeshare.Entities.csproj", "{4C616B16-09D2-453D-BB8F-B4CD38B02468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homeshare.Models", "Homeshare.Models\Homeshare.Models.csproj", "{4EA50FC3-C7FF-469C-8148-878F4EB5B9CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homeshare.Repositories", "Homeshare.Repositories\Homeshare.Repositories.csproj", "{DC02CB73-842D-4A61-AE58-AE5332E7A989}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E97D477-FCAC-4A7E-9138-D8D64979CF77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E97D477-FCAC-4A7E-9138-D8D64979CF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E97D477-FCAC-4A7E-9138-D8D64979CF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E97D477-FCAC-4A7E-9138-D8D64979CF77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8D53C3-175B-4A87-8548-77B33D089E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8D53C3-175B-4A87-8548-77B33D089E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8D53C3-175B-4A87-8548-77B33D089E09}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2F8D53C3-175B-4A87-8548-77B33D089E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8D53C3-175B-4A87-8548-77B33D089E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8D53C3-175B-4A87-8548-77B33D089E09}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B435B4A1-B241-4FC1-A2FB-DC1A13692B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B435B4A1-B241-4FC1-A2FB-DC1A13692B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B435B4A1-B241-4FC1-A2FB-DC1A13692B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B435B4A1-B241-4FC1-A2FB-DC1A13692B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C616B16-09D2-453D-BB8F-B4CD38B02468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C616B16-09D2-453D-BB8F-B4CD38B02468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C616B16-09D2-453D-BB8F-B4CD38B02468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C616B16-09D2-453D-BB8F-B4CD38B02468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA50FC3-C7FF-469C-8148-878F4EB5B9CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA50FC3-C7FF-469C-8148-878F4EB5B9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA50FC3-C7FF-469C-8148-878F4EB5B9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA50FC3-C7FF-469C-8148-878F4EB5B9CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC02CB73-842D-4A61-AE58-AE5332E7A989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC02CB73-842D-4A61-AE58-AE5332E7A989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC02CB73-842D-4A61-AE58-AE5332E7A989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC02CB73-842D-4A61-AE58-AE5332E7A989}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02A5C074-EDEF-44FC-9BD5-DF1C4B58CA28}
+	EndGlobalSection
+EndGlobal
