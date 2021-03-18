@@ -10,6 +10,7 @@ namespace Homeshare.Models
     public class RegisterModel
     {
         private string _nom, _prenom, _email, _login, _password, _telephone, _pays;
+        private int _idMembre;
 
 
         [Required]
@@ -105,6 +106,18 @@ namespace Homeshare.Models
             set
             {
                 _pays = value;
+            }
+        }
+        public int IdMembre
+        {
+            get
+            {
+                return _idMembre;
+            }
+
+            set
+            {
+                _idMembre = value;
             }
         }
     }

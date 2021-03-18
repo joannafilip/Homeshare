@@ -11,7 +11,7 @@ AS
 	
 	IF (@newPassword = @hPassword)
 	BEGIN 
-		SELECT [Login], Nom, Prenom, Email, Pays, Telephone, Libelle 
+		SELECT [Login], Nom, Prenom, Email, Pays, Telephone, Libelle, idMembre
 		FROM Membre
 		INNER JOIN Pays ON Pays.idPays = Membre.Pays
 		WHERE login=@login 

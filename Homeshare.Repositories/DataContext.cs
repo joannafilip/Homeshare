@@ -13,17 +13,33 @@ namespace Homeshare.Repositories
     {
         IConcreteRepository<PaysListEntity> _paysListRepo;
         IConcreteRepository<RegisterEntity> _registerRepo;
+        IConcreteRepository<BienEchangeEntity> _bienEchangeRepo;
 
         public DataContext(string connectionString)
         {
             _paysListRepo = new PaysListRepository(connectionString);
             _registerRepo = new RegisterRepository(connectionString);
+            _bienEchangeRepo = new BienEchangeRepository(connectionString);
+        }
+
+        public List<BienEchangeModel> GetBiensMembre(RegisterModel bm)
+        {
+            List<BienEchangeModel> bem = new List<BienEchangeModel>();
+            List<BienEchangeEntity>biensMembre = ((BienEchangeRepository)_bienEchangeRepo).GetBienMembre(bm.IdMembre);
+            foreach (BienEchangeEntity bien in biensMembre)
+            {
+                BienEchangeModel be = new BienEchangeModel();
+                be.Titre = bien.Titre;
+                be.DescCourte = bien.DescCourte;
+                bem.Add(be);
+            }
+            return bem;
         }
 
         public List<PaysListModel> SelectPays()
         {
             List<PaysListModel> plm = new List<PaysListModel>();
-            List<PaysListEntity> allPays = _paysListRepo.Get();//Récupération mon entity
+            List<PaysListEntity> allPays = _paysListRepo.Get();
             foreach (PaysListEntity pays in allPays)
             {
                 PaysListModel pl = new PaysListModel();
@@ -44,6 +60,7 @@ namespace Homeshare.Repositories
             r.Password = rm.Password;
             r.Telephone = rm.Telephone;
             r.IdPays = plm.IdPays;
+            r.IdMembre = rm.IdMembre;
             return _registerRepo.Insert(r);
 
         }
