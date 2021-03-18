@@ -12,10 +12,12 @@ namespace Homeshare.Repositories
     public class DataContext
     {
         IConcreteRepository<PaysListEntity> _paysListRepo;
+        IConcreteRepository<RegisterEntity> _registerRepo;
 
         public DataContext(string connectionString)
         {
             _paysListRepo = new PaysListRepository(connectionString);
+            _registerRepo = new RegisterRepository(connectionString);
         }
 
         public List<PaysListModel> SelectPays()
@@ -31,5 +33,21 @@ namespace Homeshare.Repositories
             }
             return plm;
         }
+        public bool SaveSignUp(RegisterModel rm, PaysListModel plm)
+        {
+
+            RegisterEntity r = new RegisterEntity();
+            r.Nom= rm.Nom;
+            r.Prenom = rm.Prenom;
+            r.Email = rm.Email;
+            r.Login = rm.Login;
+            r.Password = rm.Password;
+            r.Telephone = rm.Telephone;
+            r.IdPays = plm.IdPays;
+            return _registerRepo.Insert(r);
+
+        }
+
+
     }
 }

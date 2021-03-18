@@ -78,9 +78,9 @@
     <Build Include="dbo\Stored Procedures\sp_RecupToutesInfosBien.sql" />
     <Build Include="dbo\Stored Procedures\sp_RecupBienDispo.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
-    <Build Include="dbo\Stored Procedures\sp_InsertMember.sql" />
-    <Build Include="dbo\FonctionsScalaires\SF_EncryptedPassword.sql" />
     <Build Include="dbo\FonctionsScalaires\SF_GenerateSalt.sql" />
     <Build Include="dbo\Views\V_GetRandom.sql" />
+    <Build Include="dbo\FonctionsScalaires\SF_EncryptedPassword.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertMember.sql" />
   </ItemGroup>
 </Project>

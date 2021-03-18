@@ -5,8 +5,8 @@
 	[Email] [nvarchar](256) NOT NULL,
 	[Pays] [int] NOT NULL,
 	[Telephone] [nvarchar](20) NOT NULL,
-	[Login] VARCHAR(16) NULL,
-	[Password] VARBINARY(32) NULL,
+	[Login] NVARCHAR(50) NULL,
+	[Password] NVARCHAR(256) NULL,
  [Salt] CHAR(8) NULL, 
     CONSTRAINT [PK_membre] PRIMARY KEY CLUSTERED 
 (

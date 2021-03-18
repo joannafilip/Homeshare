@@ -15,6 +15,7 @@ namespace Homeshare.Models
 
         public RegisterViewModel()
         {
+
             PaysListModel = ctx.SelectPays();
         }
         public RegisterModel RegisterModel

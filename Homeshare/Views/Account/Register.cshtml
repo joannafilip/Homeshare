@@ -12,26 +12,33 @@
     <div class="spacer">
         <div class="row register">
             <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
+                
 
-                <form methode="post">
+                <form method="post">
+                    @Html.AntiForgeryToken()
                     <input type="text" class="form-control" placeholder="Firstname" name="Prenom">
+                    @Html.ValidationMessageFor(model => model.RegisterModel.Nom, "", new { @class = "text-danger" })
                     <input type="text" class="form-control" placeholder="Lastname" name="Nom">
+                    @Html.ValidationMessageFor(model => model.RegisterModel.Prenom, "", new { @class = "text-danger" })
                     <input type="email" class="form-control" placeholder="Email" name="Email">
+                    @Html.ValidationMessageFor(model => model.RegisterModel.Email, "", new { @class = "text-danger" })
                     <input type="text" class="form-control" placeholder="Phone" name="Telephone">
+                    @Html.ValidationMessageFor(model => model.RegisterModel.Telephone, "", new { @class = "text-danger" })
                     <input type="text" class="form-control" placeholder="Login" name="Login">
+                    @Html.ValidationMessageFor(model => model.RegisterModel.Login, "", new { @class = "text-danger" })
                     <input type="password" class="form-control" placeholder="Password" name="Password">
-                    <select name="PaysListModel">
+                    <label for="IdPays">Choose a country: </label>
+                    <select name="IdPays">
+
                         @foreach (Homeshare.Models.PaysListModel item in Model.PaysListModel)
                         {
                             <option value=@item.IdPays>@item.Libelle</option>
                         }
+
                     </select>
 
                     <button type="submit" class="btn btn-success" name="Submit">Register</button>
                 </form>
-
-
-
             </div>
 
         </div>
