@@ -32,7 +32,9 @@ namespace Homeshare.Controllers
                 if (ctx.SaveSignUp(rm, pm))
                 {
                     SessionUtils.IsLogged = true;
-                    return RedirectToAction("Index", "Home", new { area = "Member" });
+                    ViewBag.ErrorMessage = "You can log in now!";
+                    RegisterViewModel rvm = new RegisterViewModel();
+                    return View(rvm);
                 }
                 else
                 {

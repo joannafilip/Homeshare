@@ -21,7 +21,30 @@ namespace Homeshare.Repositories
             _registerRepo = new RegisterRepository(connectionString);
             _bienEchangeRepo = new BienEchangeRepository(connectionString);
         }
+        public List<BienEchangeModel> GetCinqDernierBiens()
+        {
+            List<BienEchangeModel> bem = new List<BienEchangeModel>(); 
+            List<BienEchangeEntity> derniersBiens = _bienEchangeRepo.Get();
 
+            foreach (BienEchangeEntity bien in derniersBiens)
+            {
+                BienEchangeModel b = new BienEchangeModel();
+                b.DescCourte = bien.DescCourte;
+                b.DescLong = bien.DescLong;
+                b.Latitude = bien.Latitude;
+                b.Longitude = bien.Longitude;
+                b.NombrePerson = bien.NombrePerson;
+                b.Photo = bien.Photo;
+                b.Ville = bien.Ville;
+                b.Titre = bien.Titre;
+                b.IsEnabled = bien.IsEnabled;
+
+                bem.Add(b);
+            }
+            return bem;
+
+        }
+       
         public List<BienEchangeModel> GetBiensMembre(RegisterModel bm )
         {
             List<BienEchangeModel> bem = new List<BienEchangeModel>();

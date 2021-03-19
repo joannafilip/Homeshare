@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using Homeshare.Infra;
 
 namespace Homeshare.Models
 {
@@ -15,10 +16,16 @@ namespace Homeshare.Models
 
         public AreaViewModel()
         {
-
             PaysListModel = ctx.SelectPays();
-            BienEchangeModel= new BienEchangeModel();
+            
         }
+        public AreaViewModel(BienEchangeModel bm)
+        {
+            
+                ctx.InsertBien(bm);
+        }
+
+
         public BienEchangeModel BienEchangeModel
         {
             get

@@ -28,7 +28,9 @@ namespace Homeshare.Repositories
         }
         public List<BienEchangeEntity> Get()
         {
-            throw new NotImplementedException();
+            string requete = "Select * from Vue_CinqDernierBiens";
+
+            return base.Get(requete);
         }
 
 
