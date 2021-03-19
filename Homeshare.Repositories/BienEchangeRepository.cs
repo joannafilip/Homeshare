@@ -40,7 +40,25 @@ namespace Homeshare.Repositories
 
         public bool Insert(BienEchangeEntity toInsert)
         {
-            throw new NotImplementedException();
+            string requete = @"EXEC [dbo].[sp_InsertBien] 
+                                                    @titre
+                                                   ,@descCourte
+                                                   ,@descLong
+                                                   ,@nombrePerson
+                                                   ,@idPays
+                                                   ,@ville
+                                                   ,@rue
+                                                   ,@numero
+                                                   ,@codePostal
+                                                   ,@photo
+                                                   ,@assuranceObligatoire
+                                                   ,@isEnabled
+                                                   ,@disabledDate
+                                                   ,@latitude
+                                                   ,@longitude
+                                                   ,@dateCreation
+                                                   ,@idMembre";
+            return base.Insert(toInsert, requete);
         }
 
         public bool Update(BienEchangeEntity toUpdate)

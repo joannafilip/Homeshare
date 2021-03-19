@@ -64,6 +64,30 @@ namespace Homeshare.Repositories
             return _registerRepo.Insert(r);
 
         }
+        public bool InsertBien(BienEchangeModel bem)
+        {
+
+            BienEchangeEntity bee = new BienEchangeEntity();
+            bee.Titre = bem.Titre;
+            bee.CodePostale = bem.CodePostale;
+            bee.DateCreation = bem.DateCreation;
+            bee.DescCourte = bem.DescCourte;
+            bee.DescLong = bem.DescLong;
+            bee.DisabledDate = bem.DisabledDate;
+            bee.IdMembre = bem.IdMembre;
+            bee.IsEnabled = bem.IsEnabled;
+            bee.Latitude = bem.Latitude;
+            bee.Longitude = bem.Longitude;
+            bee.NombrePerson = bem.NombrePerson;
+            bee.Numero = bem.Numero;
+            bee.Pays = bem.IdPays;
+            bee.Photo = bem.Photo;
+            bee.Rue = bem.Rue;
+            bee.Ville = bem.Ville;
+            bee.AssuranceObligatoire = bem.AssuranceObligatoire;
+            return _bienEchangeRepo.Insert(bee);
+
+        }
 
         public RegisterModel UserAuth(LoginModel lm)
         {

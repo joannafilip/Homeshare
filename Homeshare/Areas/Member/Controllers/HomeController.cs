@@ -26,7 +26,16 @@ namespace Homeshare.Areas.Member.Controllers
             rm = SessionUtils.ConnectedUser;
             return View(ctx.GetBiensMembre(rm));
         }
+        [HttpGet]
         public ActionResult AddAProperty()
+        {
+            AreaViewModel avm = new AreaViewModel();
+            return View(avm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddAProperty(BienEchangeModel bem)
         {
             AreaViewModel avm = new AreaViewModel();
             return View(avm);

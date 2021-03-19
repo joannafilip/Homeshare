@@ -82,5 +82,6 @@
     <Build Include="dbo\Views\V_GetRandom.sql" />
     <Build Include="dbo\FonctionsScalaires\SF_EncryptedPassword.sql" />
     <Build Include="dbo\Stored Procedures\sp_Check_Password.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertMember_1.sql" />
   </ItemGroup>
 </Project>
