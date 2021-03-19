@@ -18,19 +18,18 @@ namespace Homeshare.Areas.Member.Controllers
             return View(SessionUtils.ConnectedUser);
         }
 
-        public ActionResult MyProperties()
+        public ActionResult MyProperties(RegisterModel rm)
         {
 
             DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
 
-            //BienEchangeModel rm = new BienEchangeModel();
-            //rm.IdMembre = SessionUtils.ConnectedUser.IdMembre;
-            //RegisterModel rm = ctx.GetBiensMembre(IdMembre);
-            return View(SessionUtils.ConnectedUser);
+            rm = SessionUtils.ConnectedUser;
+            return View(ctx.GetBiensMembre(rm));
         }
         public ActionResult AddAProperty()
         {
-            return View(new BienEchangeModel());
+            AreaViewModel avm = new AreaViewModel();
+            return View(avm);
         }
     }
 }

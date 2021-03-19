@@ -4,15 +4,15 @@
     ViewBag.Title = "AddAProperty";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@*<h1>Add a Property</h1>
+<h1>Add a Property</h1>
 <form method="post">
     @Html.AntiForgeryToken()
     Title: <input type="text" class="form-control" placeholder="Title" name="Titre">
-    @Html.ValidationMessageFor(model => model.Pays, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.BienEchangeModel.Titre, "", new { @class = "text-danger" })
     Short Description: <input type="text" class="form-control" placeholder="Short Description" name="DescCourte">
-    @Html.ValidationMessageFor(model => model.DescCourte, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.BienEchangeModel.DescCourte, "", new { @class = "text-danger" })
     Description: <input type="text" class="form-control" placeholder="Description" name="DescLong">
-    @Html.ValidationMessageFor(model => model.DescLong, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.BienEchangeModel.DescLong, "", new { @class = "text-danger" })
 
     <label for="IdPays">Choose a country: </label>
     <select name="IdPays">
@@ -24,14 +24,14 @@
 
     </select>
     City: <input type="text" class="form-control" placeholder="City" name="Ville">
-    @Html.ValidationMessageFor(model => model.Ville, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.BienEchangeModel.Ville, "", new { @class = "text-danger" })
 
 
 
 
     <textarea rows="6" class="form-control" placeholder="Message"></textarea>
     <button type="submit" class="btn btn-success" name="Submit">Send Message</button>
-</form>*@
+</form>
 @*<div class="form-horizontal">
     <h4>BienEchangeModel</h4>
     <hr />

@@ -22,7 +22,7 @@ namespace Homeshare.Repositories
             _bienEchangeRepo = new BienEchangeRepository(connectionString);
         }
 
-        public List<BienEchangeModel> GetBiensMembre(RegisterModel bm)
+        public List<BienEchangeModel> GetBiensMembre(RegisterModel bm )
         {
             List<BienEchangeModel> bem = new List<BienEchangeModel>();
             List<BienEchangeEntity>biensMembre = ((BienEchangeRepository)_bienEchangeRepo).GetBienMembre(bm.IdMembre);
@@ -80,7 +80,8 @@ namespace Homeshare.Repositories
                     Login = re.Login,
                     Email = re.Email,
                     Telephone = re.Telephone,
-                    Pays = re.Libelle
+                    Pays = re.Libelle,
+                    IdMembre = re.IdMembre
                     
                     
                 };

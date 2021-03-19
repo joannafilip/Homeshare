@@ -11,14 +11,15 @@ namespace Homeshare.Models
     {
         private DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
         private List<PaysListModel> _paysListModel;
-        private List<BienEchangeModel> _bienEchangeModel;
+        private BienEchangeModel _bienEchangeModel;
 
         public AreaViewModel()
         {
 
             PaysListModel = ctx.SelectPays();
+            BienEchangeModel= new BienEchangeModel();
         }
-        public List<BienEchangeModel> RegisterModel
+        public BienEchangeModel BienEchangeModel
         {
             get
             {
@@ -27,7 +28,7 @@ namespace Homeshare.Models
 
             set
             {
-                _bienEchangeModel = value;
+                _bienEchangeModel= value;
             }
         }
         public List<PaysListModel> PaysListModel

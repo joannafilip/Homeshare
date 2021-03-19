@@ -11,6 +11,7 @@ namespace Homeshare.Models
     {
         private string _nom, _prenom, _email, _login, _password, _telephone, _pays;
         private int _idMembre;
+        private List <BienEchangeModel> _bienEchangeModel;
 
 
         [Required]
@@ -120,5 +121,19 @@ namespace Homeshare.Models
                 _idMembre = value;
             }
         }
+        public List <BienEchangeModel> BienEchangeModel
+        {
+            get
+            {
+                return _bienEchangeModel;
+            }
+
+            set
+            {
+                _bienEchangeModel = value;
+            }
+        }
+
+       
     }
 }

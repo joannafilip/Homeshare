@@ -1,4 +1,4 @@
-﻿@model Homeshare.Models.BienEchangeModel
+﻿@model Homeshare.Models.RegisterModel
 @{
     ViewBag.Title = "MyProperties";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,6 +7,12 @@
 @*@{
         Html.RenderPartial("~/Areas/Member/Views/Shared/_Profil.cshtml");
     }*@
-<div>@Model.DescCourte</div>
+@*@foreach (Homeshare.Models.BienEchangeModel item in Model.BienEchangeModel)
+{
+    
+        <div>@item.DescCourte</div>
+        <div>@item.Titre</div>
+    }*@
 
 
+@*<div>@Model.DescLong</div>*@
