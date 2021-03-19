@@ -15,5 +15,4 @@ AS
 		FROM Membre
 		INNER JOIN Pays ON Pays.idPays = Membre.Pays
 		WHERE login=@login 
-	END 
-
+	END

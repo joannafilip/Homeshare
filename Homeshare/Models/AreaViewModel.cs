@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
-using Homeshare.Infra;
 
 namespace Homeshare.Models
 {
@@ -12,21 +11,14 @@ namespace Homeshare.Models
     {
         private DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
         private List<PaysListModel> _paysListModel;
-        private BienEchangeModel _bienEchangeModel;
+        private List<BienEchangeModel> _bienEchangeModel;
 
         public AreaViewModel()
         {
+
             PaysListModel = ctx.SelectPays();
-            
         }
-        public AreaViewModel(BienEchangeModel bm)
-        {
-            
-                ctx.InsertBien(bm);
-        }
-
-
-        public BienEchangeModel BienEchangeModel
+        public List<BienEchangeModel> BienEchangeModel
         {
             get
             {
@@ -35,7 +27,7 @@ namespace Homeshare.Models
 
             set
             {
-                _bienEchangeModel= value;
+                _bienEchangeModel = value;
             }
         }
         public List<PaysListModel> PaysListModel

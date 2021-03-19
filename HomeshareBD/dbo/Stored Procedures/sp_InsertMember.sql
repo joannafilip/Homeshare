@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[sp_InsertMember]
-@nom NVARCHAR (50),
+
+	@nom NVARCHAR (50),
 	@prenom NVARCHAR (50),
 	@email NVARCHAR (256) ,
 	@login NVARCHAR(50),

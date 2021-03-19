@@ -10,7 +10,7 @@ namespace Homeshare.Models
    public class BienEchangeModel
     {
         private string _titre, _descCourte, _descLong, _ville, _rue, _numero, _codePostal, _photo, _latitude, _longitude;
-        private int _idBien, _nombrePerson, _idPays, _idMembre;
+        private int _idBien, _nombrePerson, _idPays, _idMembre, _note;
         private bool _assuranceObligatoire, _isEnabled;
         private DateTime _disabledDate, _dateCreation;
         private List<PaysListModel> _paysListModel;
@@ -117,6 +117,18 @@ namespace Homeshare.Models
             set
             {
                 _photo = value;
+            }
+        }
+        public int Note
+        {
+            get
+            {
+                return _note;
+            }
+
+            set
+            {
+                _note = value;
             }
         }
         [Required]

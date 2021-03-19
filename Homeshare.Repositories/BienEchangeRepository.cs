@@ -32,6 +32,12 @@ namespace Homeshare.Repositories
 
             return base.Get(requete);
         }
+        public List<BienEchangeEntity> GetMeilleursAvis()
+        {
+            string requete = "Select * from Vue_MeilleursAvis";
+
+            return base.Get(requete);
+        }
 
 
 

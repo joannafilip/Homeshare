@@ -1,8 +1,6 @@
-﻿CREATE TABLE [dbo].[Options](
-	[idOption] [int] IDENTITY(1,1) NOT NULL,
-	[Libelle] [nvarchar](50) NOT NULL,
- CONSTRAINT [PK_Options] PRIMARY KEY CLUSTERED 
-(
-	[idOption] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
+﻿CREATE TABLE [dbo].[Options] (
+    [idOption] INT           IDENTITY (1, 1) NOT NULL,
+    [Libelle]  NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Options] PRIMARY KEY CLUSTERED ([idOption] ASC)
+);
+

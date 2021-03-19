@@ -44,7 +44,22 @@ namespace Homeshare.Repositories
             return bem;
 
         }
-       
+        public List<BienEchangeModel> GetMeilleursAvis()
+        {
+            List<BienEchangeModel> bem = new List<BienEchangeModel>();
+            List<BienEchangeEntity> meilleursAvis = ((BienEchangeRepository)_bienEchangeRepo).GetMeilleursAvis();
+
+            foreach (BienEchangeEntity avis in meilleursAvis)
+            {
+                BienEchangeModel b = new BienEchangeModel();
+                b.Titre = avis.Titre;
+                b.Note = avis.Note;
+                bem.Add(b);
+            }
+            return bem;
+
+        }
+
         public List<BienEchangeModel> GetBiensMembre(RegisterModel bm )
         {
             List<BienEchangeModel> bem = new List<BienEchangeModel>();

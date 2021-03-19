@@ -56,32 +56,20 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
-    <Folder Include="dbo\Views\" />
-    <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Scripts\" />
-    <Folder Include="dbo\FonctionsScalaires" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Options.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
     <Build Include="dbo\Tables\Pays.sql" />
+    <Build Include="dbo\Tables\OptionsBien.sql" />
+    <Build Include="dbo\Tables\Options.sql" />
+    <Build Include="dbo\Tables\MembreBienEchange.sql" />
     <Build Include="dbo\Tables\Membre.sql" />
     <Build Include="dbo\Tables\BienEchange.sql" />
     <Build Include="dbo\Tables\AvisMembreBien.sql" />
-    <Build Include="dbo\Tables\OptionsBien.sql" />
-    <Build Include="dbo\Tables\MembreBienEchange.sql" />
-    <Build Include="dbo\Views\Vue_CinqDernierBiens.sql" />
-    <Build Include="dbo\Views\Vue_BiensParPays.sql" />
-    <Build Include="dbo\Views\Vue_MeilleursAvis.sql" />
-    <Build Include="dbo\Stored Procedures\sp_RecupBienMembre.sql" />
     <Build Include="dbo\Stored Procedures\sp_RecupToutesInfosBien.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RecupBienMembre.sql" />
     <Build Include="dbo\Stored Procedures\sp_RecupBienDispo.sql" />
-    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
-    <Build Include="dbo\FonctionsScalaires\SF_GenerateSalt.sql" />
-    <Build Include="dbo\Views\V_GetRandom.sql" />
-    <Build Include="dbo\FonctionsScalaires\SF_EncryptedPassword.sql" />
-    <Build Include="dbo\Stored Procedures\sp_Check_Password.sql" />
-    <Build Include="dbo\Stored Procedures\sp_InsertMember_1.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Check_Password.sql" />
   </ItemGroup>
 </Project>
