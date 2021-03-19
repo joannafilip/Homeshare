@@ -128,6 +128,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infra\SessionUtils.cs" />
+    <Compile Include="Models\AreaViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,6 +197,7 @@
     <Content Include="Areas\Member\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Member\Views\Shared\_Profil.cshtml" />
     <Content Include="Areas\Member\Views\Home\MyProperties.cshtml" />
+    <Content Include="Areas\Member\Views\Home\AddAProperty.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

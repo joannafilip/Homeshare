@@ -22,10 +22,15 @@ namespace Homeshare.Areas.Member.Controllers
         {
 
             DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+
             //BienEchangeModel rm = new BienEchangeModel();
             //rm.IdMembre = SessionUtils.ConnectedUser.IdMembre;
-            ctx.GetBiensMembre(SessionUtils.ConnectedUser);
+            //RegisterModel rm = ctx.GetBiensMembre(IdMembre);
             return View(SessionUtils.ConnectedUser);
+        }
+        public ActionResult AddAProperty()
+        {
+            return View(new BienEchangeModel());
         }
     }
 }

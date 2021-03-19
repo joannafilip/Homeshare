@@ -14,7 +14,6 @@ namespace Homeshare.Models
         public HomeViewModel()
         {
 
-           
         }
         public LoginModel LoginModel
         {
