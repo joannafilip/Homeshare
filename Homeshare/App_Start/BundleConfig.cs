@@ -35,6 +35,8 @@ namespace Homeshare
                     "~/slitslider/css/custom.css"));
             bundles.Add(new StyleBundle("~/Content/profil").Include(
                     "~/css/styleProfil.css"));
+            bundles.Add(new StyleBundle("~/Content/bienMember").Include(
+                   "~/css/styleBienMember.css"));
 
         }
     }

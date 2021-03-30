@@ -1,18 +1,54 @@
-﻿@model Homeshare.Models.RegisterModel
-@{
+﻿@{
     ViewBag.Title = "MyProperties";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*@{
-        Html.RenderPartial("~/Areas/Member/Views/Shared/_Profil.cshtml");
-    }*@
-@*@foreach (Homeshare.Models.BienEchangeModel item in Model.BienEchangeModel)
-{
-    
-        <div>@item.DescCourte</div>
-        <div>@item.Titre</div>
-    }*@
+
+@Styles.Render("~/Content/bienMember")
+<div class="container py-5">
+    <div class="row text-center text-white mb-5">
+        <div class="col-lg-7 mx-auto">
+        </div>
+    </div>
+    <h2 class="h2 text-success text-center">Products List</h2>
+    <br />
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+            <!-- List group-->
+            <ul class="list-group shadow">
+
+                <!-- list group item-->
+                @foreach (Homeshare.Models.BienEchangeModel item in Model)
+                {
+                    <li class="list-group-item">
+                        <!-- Custom content-->
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2 color-green text-success">@item.Titre</h5>
+                                <p class="font-italic text-muted mb-0 small">Nombre : @item.NombrePerson| Latitude : @item.Latitude| Longitude : @item.Longitude | @item.| @*@item.DateProposition.ToString("d MMM yyyy")*@</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2"></h6>
+                                    <ul class="list-inline small">
+                                        @*@if (@item.Bio == true)
+                                        {
+                                            @:<li class="list-inline-item m-0">Bio</li>
+                                        }
+                                        else
+                                        {
+                                            @:<li class="list-inline-item m-0"></li>
+                                        }*@
 
 
-@*<div>@Model.DescLong</div>*@
+                                    </ul>
+                                </div>
+                                @*</div><img class="im" src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">*@
+                            </div> <!-- End -->
+                    </li>
+                }
+            </ul> <!-- End -->
+            <br />
+            <a href="/Member/Home/Index">Back</a>
+        </div>
+    </div>
+</div>

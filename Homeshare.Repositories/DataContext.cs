@@ -69,6 +69,23 @@ namespace Homeshare.Repositories
                 BienEchangeModel be = new BienEchangeModel();
                 be.Titre = bien.Titre;
                 be.DescCourte = bien.DescCourte;
+                be.Latitude = bien.Latitude;
+                be.Longitude = bien.Longitude;
+                be.NombrePerson = bien.NombrePerson;
+                be.Note = bien.Note;
+                be.Numero = bien.Numero;
+                be.Photo = bien.Photo;
+                be.Numero = bien.Numero;
+                be.Rue = bien.Rue;
+                be.Ville = bien.Ville;
+                be.DescLong = bien.DescLong;
+                be.CodePostale = bien.CodePostale;
+                be.DateCreation = bien.DateCreation;
+                be.AssuranceObligatoire = bien.AssuranceObligatoire;
+                be.IdMembre = bien.IdMembre;
+                be.IdBien = bien.IdBien;
+                
+  
                 bem.Add(be);
             }
             return bem;

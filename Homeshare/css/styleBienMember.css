@@ -1,0 +1,13 @@
+﻿body {
+    /*    background: linear-gradient(to right, #74a044, #a8e063);*/
+    min-height: 100vh
+}
+
+.text-gray {
+    color: #aaa
+}
+
+.im {
+    height: 170px;
+    width: 140px
+}
