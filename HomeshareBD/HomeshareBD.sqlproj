@@ -57,6 +57,9 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Scripts\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />

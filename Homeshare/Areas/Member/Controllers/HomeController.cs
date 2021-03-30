@@ -37,11 +37,11 @@ namespace Homeshare.Areas.Member.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddAProperty(BienEchangeModel bem)
         {
-            AreaViewModel avm = new AreaViewModel(bem);
+            AreaViewModel avm = new AreaViewModel();
             return View(avm);
            
         }
-        [HttpGet]
+        //[HttpGet]
         public ActionResult Logout()
         {
             Session.Abandon();
