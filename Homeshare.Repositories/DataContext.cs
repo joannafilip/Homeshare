@@ -39,6 +39,7 @@ namespace Homeshare.Repositories
                 b.Titre = bien.Titre;
                 b.IsEnabled = bien.IsEnabled;
 
+
                 bem.Add(b);
             }
             return bem;
@@ -84,8 +85,7 @@ namespace Homeshare.Repositories
                 be.AssuranceObligatoire = bien.AssuranceObligatoire;
                 be.IdMembre = bien.IdMembre;
                 be.IdBien = bien.IdBien;
-                
-  
+                be.Pays = bien.Libelle;
                 bem.Add(be);
             }
             return bem;
@@ -135,7 +135,7 @@ namespace Homeshare.Repositories
             bee.Longitude = bem.Longitude;
             bee.NombrePerson = bem.NombrePerson;
             bee.Numero = bem.Numero;
-            bee.Pays = bem.IdPays;
+            bee.Libelle = bem.Pays;
             bee.Photo = bem.Photo;
             bee.Rue = bem.Rue;
             bee.Ville = bem.Ville;

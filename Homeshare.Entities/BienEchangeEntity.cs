@@ -8,7 +8,7 @@ namespace Homeshare.Entities
 {
     public class BienEchangeEntity
     {
-        private string _titre, _descCourte, _descLong, _ville, _rue, _numero, _codePostal, _photo, _latitude, _longitude;
+        private string _titre, _descCourte, _descLong, _ville, _rue, _numero, _codePostal, _photo, _latitude, _longitude, _libelle;
         private int _idBien, _nombrePerson, _pays, _idMembre, _note;
         private bool _assuranceObligatoire, _isEnabled;
         private DateTime _disabledDate, _dateCreation;
@@ -191,6 +191,18 @@ namespace Homeshare.Entities
             set
             {
                 _longitude = value;
+            }
+        }
+        public string Libelle
+        {
+            get
+            {
+                return _libelle;
+            }
+
+            set
+            {
+                _libelle = value;
             }
         }
         public bool AssuranceObligatoire
