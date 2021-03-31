@@ -186,6 +186,17 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="images\Biens\1005\appart1.jpg" />
+    <Content Include="images\Biens\1005\cottage1.jpg" />
+    <Content Include="images\Biens\1005\cottage2.jpg" />
+    <Content Include="images\Biens\1005\cottage3.jpg" />
+    <Content Include="images\Biens\1008\chateau1.jpg" />
+    <Content Include="images\Biens\1008\cottage5.jpg" />
+    <Content Include="images\Biens\1008\cottage6.jpg" />
+    <Content Include="images\Biens\1\maison2.jpg" />
+    <Content Include="images\Biens\4\cottage4.jpg" />
+    <Content Include="images\Biens\4\maison1.jpg" />
+    <Content Include="images\Biens\7\appart2.jpg" />
     <Content Include="owl-carousel\AjaxLoader.gif" />
     <Content Include="owl-carousel\grabbing.png" />
     <Content Include="owl-carousel\owl.carousel.css" />

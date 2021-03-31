@@ -17,7 +17,7 @@ namespace Homeshare.Models
 
         public HomeViewModel()
         {
-            TopBienEchangeModel = ctx.GetCinqDernierBiens();
+            TopBienEchangeModel = ctx.Get12DernierBiens();
             MeilleursAvis = ctx.GetMeilleursAvis();
         }
         public LoginModel LoginModel

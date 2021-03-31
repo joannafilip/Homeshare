@@ -21,7 +21,7 @@ namespace Homeshare.Repositories
             _registerRepo = new RegisterRepository(connectionString);
             _bienEchangeRepo = new BienEchangeRepository(connectionString);
         }
-        public List<BienEchangeModel> GetCinqDernierBiens()
+        public List<BienEchangeModel> Get12DernierBiens()
         {
             List<BienEchangeModel> bem = new List<BienEchangeModel>(); 
             List<BienEchangeEntity> derniersBiens = _bienEchangeRepo.Get();
@@ -38,6 +38,7 @@ namespace Homeshare.Repositories
                 b.Ville = bien.Ville;
                 b.Titre = bien.Titre;
                 b.IsEnabled = bien.IsEnabled;
+                b.IdMembre = bien.IdMembre;
 
 
                 bem.Add(b);

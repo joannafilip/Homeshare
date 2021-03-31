@@ -28,7 +28,7 @@ namespace Homeshare.Repositories
         }
         public List<BienEchangeEntity> Get()
         {
-            string requete = "Select * from Vue_CinqDernierBiens";
+            string requete = "Select * from Vue_12DernierBiens";
 
             return base.Get(requete);
         }

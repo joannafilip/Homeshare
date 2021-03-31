@@ -80,10 +80,10 @@
   <ItemGroup>
     <Build Include="dbo\Views\V_GetRandom.sql" />
     <Build Include="dbo\Views\Vue_BiensParPays.sql" />
-    <Build Include="dbo\Views\Vue_CinqDernierBiens.sql" />
     <Build Include="dbo\Views\Vue_MeilleursAvis.sql" />
     <Build Include="dbo\Stored Procedures\sp_InsertMember.sql" />
     <Build Include="dbo\FonctionsScalaires\SF_EncryptedPassword.sql" />
     <Build Include="dbo\FonctionsScalaires\SF_GenerateSalt.sql" />
+    <Build Include="dbo\Views\Vue_12DernierBiens.sql" />
   </ItemGroup>
 </Project>
