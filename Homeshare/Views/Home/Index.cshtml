@@ -137,7 +137,6 @@
         <a href="buysalerent.php" class="pull-right viewall">View All Listing</a>
         <h2>Lastly Added Properties</h2>
         <div id="owl-example" class="owl-carousel">
-
             @foreach (Homeshare.Models.BienEchangeModel item in Model.TopBienEchangeModel)
             {
                 <div class="properties">
@@ -158,7 +157,6 @@
                     <a class="btn btn-primary" href="property-detail.php">View Details</a>
                 </div>
             }
-
         </div>
     </div>
     <div class="spacer">
@@ -179,52 +177,36 @@
                     </ol>
                     <!-- Carousel items -->
                     <div class="carousel-inner">
-                        @foreach (Homeshare.Models.BienEchangeModel item in Model.MeilleursAvis)
-                        { 
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-lg-4"><img src="/images/properties/1.jpg" class="img-responsive" alt="properties" /></div>
-                                    <div class="col-lg-8">
-                                        <h5><a href="property-detail.php">@item.Titre</a></h5>
-                                        <p class="price">Note: @item.Note</p>
-                                        <a href="property-detail.php" class="more">More Detail</a>
+                        @for (int i = 0; i < Model.MeilleursAvis.LongCount(); i++)
+                        {
+                            if (i == 0)
+                            {
+                                <div class="item active">
+                                    <div class="row">
+                                        <div class="col-lg-4"><img src="~/images/Biens/@Model.MeilleursAvis[i].IdMembre/@Model.MeilleursAvis[i].Photo" class="img-responsive" alt="properties" /></div>
+                                        <div class="col-lg-8">
+                                            <h5><a href="property-detail.php">@Model.MeilleursAvis[i].Titre</a></h5>
+                                            <p class="price">Note: @Model.MeilleursAvis[i].Note</p>
+                                            <a href="property-detail.php" class="more">More Detail</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
+                            }
 
-
-
-                        @*<div class="item">
-                            <div class="row">
-                                <div class="col-lg-4"><img src="/images/properties/2.jpg" class="img-responsive" alt="properties" /></div>
-                                <div class="col-lg-8">
-                                    <h5><a href="property-detail.php">Integer sed porta quam</a></h5>
-                                    <p class="price">$300,000</p>
-                                    <a href="property-detail.php" class="more">More Detail</a>
+                            else
+                            {
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-4"><img src="~/images/Biens/@Model.MeilleursAvis[i].IdMembre/@Model.MeilleursAvis[i].Photo" style="height : 85px ;width: 150px;"  class="img-responsive" alt="properties" /></div>
+                                        <div class="col-lg-8">
+                                            <h5><a href="property-detail.php">@Model.MeilleursAvis[i].Titre</a></h5>
+                                            <p class="price">Note: @Model.MeilleursAvis[i].Note</p>
+                                            <a href="property-detail.php" class="more">More Detail</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>*@
-                        @*<div class="item">
-            <div class="row">
-                <div class="col-lg-4"><img src="/images/properties/3.jpg" class="img-responsive" alt="properties" /></div>
-                <div class="col-lg-8">
-                    <h5><a href="property-detail.php">Integer sed porta quam</a></h5>
-                    <p class="price">$300,000</p>
-                    <a href="property-detail.php" class="more">More Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="row">
-                <div class="col-lg-4"><img src="/images/properties/4.jpg" class="img-responsive" alt="properties" /></div>
-                <div class="col-lg-8">
-                    <h5><a href="property-detail.php">Integer sed porta quam</a></h5>
-                    <p class="price">$300,000</p>
-                    <a href="property-detail.php" class="more">More Detail</a>
-                </div>
-            </div>
-        </div>*@
+                            }
+                        }
                     </div>
                 </div>
             </div>

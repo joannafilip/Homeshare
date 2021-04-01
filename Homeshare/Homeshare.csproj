@@ -157,6 +157,8 @@
     <Content Include="images\bg.jpg" />
     <Content Include="images\bginside.jpg" />
     <Content Include="images\bgmain.png" />
+    <Content Include="images\Biens\7\1.jpg" />
+    <Content Include="images\Biens\7\2.jpg" />
     <Content Include="images\blog\1.jpg" />
     <Content Include="images\blog\2.jpg" />
     <Content Include="images\blog\3.jpg" />

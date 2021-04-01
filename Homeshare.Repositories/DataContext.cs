@@ -56,6 +56,8 @@ namespace Homeshare.Repositories
                 BienEchangeModel b = new BienEchangeModel();
                 b.Titre = avis.Titre;
                 b.Note = avis.Note;
+                b.IdMembre = avis.IdMembre;
+                b.Photo = avis.Photo;
                 bem.Add(b);
             }
             return bem;
