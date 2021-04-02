@@ -1,76 +1,40 @@
 ﻿@model Homeshare.Models.HomeViewModel
 <div class="">
-
-    @if (ViewBag.SuccessMessage != null)
-    {
-        @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
-    }
     <div id="slider" class="sl-slider-wrapper">
 
         <div class="sl-slider">
-
-            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                <div class="sl-slide-inner">
-                    <div class="bg-img bg-img-1"></div>
-                    <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-                    <blockquote>
-                        <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-                        <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-                        <cite>$ 20,000,000</cite>
-                    </blockquote>
-                </div>
-            </div>
-
-            <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-                <div class="sl-slide-inner">
-                    <div class="bg-img bg-img-2"></div>
-                    <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-                    <blockquote>
-                        <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-                        <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-                        <cite>$ 20,000,000</cite>
-                    </blockquote>
-                </div>
-            </div>
-
-            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                <div class="sl-slide-inner">
-                    <div class="bg-img bg-img-3"></div>
-                    <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-                    <blockquote>
-                        <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-                        <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-                        <cite>$ 20,000,000</cite>
-                    </blockquote>
-                </div>
-            </div>
-
-            <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
-                <div class="sl-slide-inner">
-                    <div class="bg-img bg-img-4"></div>
-                    <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-                    <blockquote>
-                        <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-                        <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-                        <cite>$ 20,000,000</cite>
-                    </blockquote>
-                </div>
-            </div>
-
-            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-                <div class="sl-slide-inner">
-                    <div class="bg-img bg-img-5"></div>
-                    <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-                    <blockquote>
-                        <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-                        <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-                        <cite>$ 20,000,000</cite>
-                    </blockquote>
-                </div>
-            </div>
+            @for (int i = 5; i >= 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                        <div class="sl-slide-inner">
+                            <div class="bg-img bg-img-@i"></div>
+                            <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+                            <blockquote>
+                                <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+                                <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+                                <cite>$ 20,000,000</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                        <div class="sl-slide-inner">
+                            <div class="bg-img bg-img-@i"></div>
+                            <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+                            <blockquote>
+                                <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+                                <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+                                <cite>$ 20,000,000</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                }
+            }
         </div><!-- /sl-slider -->
-
-
 
         <nav id="nav-dots" class="nav-dots">
             <span class="nav-dot-current"></span>
@@ -141,7 +105,7 @@
             {
                 <div class="properties">
                     <div class="image-holder">
-                        <img src="~/images/Biens/@item.IdMembre/@item.Photo" class="img-responsive" style ="height : 150px ;width: 200px;"alt="properties" />
+                        <img src="~/images/Biens/@item.IdMembre/@item.Photo" class="img-responsive" style="height : 150px ;width: 200px;" alt="properties" />
                         @if (@item.IsEnabled == true)
                         {<div class="status sold">Available</div> }
                         else
@@ -197,7 +161,7 @@
                             {
                                 <div class="item">
                                     <div class="row">
-                                        <div class="col-lg-4"><img src="~/images/Biens/@Model.MeilleursAvis[i].IdMembre/@Model.MeilleursAvis[i].Photo" style="height : 85px ;width: 150px;"  class="img-responsive" alt="properties" /></div>
+                                        <div class="col-lg-4"><img src="~/images/Biens/@Model.MeilleursAvis[i].IdMembre/@Model.MeilleursAvis[i].Photo" style="height : 85px ;width: 150px;" class="img-responsive" alt="properties" /></div>
                                         <div class="col-lg-8">
                                             <h5><a href="property-detail.php">@Model.MeilleursAvis[i].Titre</a></h5>
                                             <p class="price">Note: @Model.MeilleursAvis[i].Note</p>
@@ -250,4 +214,6 @@
         </div>
     </div>
 </div>
+<br />
+
 <!-- /.modal -->
