@@ -66,5 +66,13 @@ namespace Homeshare.Controllers
         {
             return View();
         }
+        public ActionResult Property(int id)
+        {
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            ViewBag.IndexBien = id;
+            HomeViewModel hvm = new HomeViewModel();
+            hvm.TargetBien = ctx.GetOneBienByPage(id);
+            return View(hvm);
+        }
     }
 }

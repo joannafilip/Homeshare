@@ -37,6 +37,8 @@ namespace Homeshare
                     "~/css/styleProfil.css"));
             bundles.Add(new StyleBundle("~/Content/bienMember").Include(
                    "~/css/styleBienMember.css"));
+            bundles.Add(new StyleBundle("~/css/property").Include(
+                   "~/css/styleProperty.css"));
 
         }
     }

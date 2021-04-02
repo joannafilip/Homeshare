@@ -7,7 +7,25 @@ CREATE PROCEDURE [dbo].[sp_RecupToutesInfosBien]
 	@idBien int
 AS
 BEGIN
-SELECT     *
+SELECT       
+        titre
+       ,DescCourte
+       ,DescLong
+       ,NombrePerson
+       ,Ville
+       ,Rue
+       ,Numero
+       ,CodePostal
+       ,Photo
+       ,AssuranceObligatoire
+       ,isEnabled
+       ,DisabledDate
+       ,Latitude
+       ,Longitude
+       ,DateCreation
+       ,BienEchange.idBien AS IdBien
+       ,BienEchange.idMembre AS IdMembre
+       ,Pays.Libelle AS Libelle
 FROM        BienEchange  left JOIN
                       AvisMembreBien ON AvisMembreBien.idBien = BienEchange.idBien left JOIN
                       Membre ON AvisMembreBien.idMembre = Membre.idMembre AND BienEchange.idMembre = Membre.idMembre left JOIN

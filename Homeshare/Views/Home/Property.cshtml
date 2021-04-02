@@ -1,0 +1,58 @@
+﻿@model Homeshare.Models.HomeViewModel
+@{
+    ViewBag.Title = "Property";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@Styles.Render("~/css/property")
+<br />
+<div class="wrapper">
+    <div class="product-img">
+        <img src="~/images/Biens/@Model.TargetBien.IdMembre/@Model.TargetBien.Photo" height="220" width="327" style = "margin-left : 20px; margin-top : 20px">
+        <div style=" margin-left : 20px; margin-top : 20px">@Model.TargetBien.DescLong</div>
+    </div>
+    <div class="product-info">
+        <div class="product-text">
+            <h1>@Model.TargetBien.Titre</h1>
+            <h6>@Model.TargetBien.Rue, @Model.TargetBien.Ville, @Model.TargetBien.Pays</h6>
+            <p>
+                @Model.TargetBien.DescCourte<br> Latidude : @Model.TargetBien.Latitude<br> Longitude : @Model.TargetBien.Longitude<br> Nombre de personnes : @Model.TargetBien.NombrePerson
+                @if (@Model.TargetBien.AssuranceObligatoire)
+
+                {
+                <p>Assurance obligatoire</p>
+                }
+            else
+            {
+                <p>Unavailable</p>
+            }
+
+
+                @if (@Model.TargetBien.IsEnabled)
+
+                {
+                    <p>Disponible</p>
+                }
+                else
+                {
+                    <p>Pas disponible</p>
+                }
+
+                @if (@Model.TargetBien.Note == 0)
+
+                {
+                    <p>Pas de note</p>
+                }
+                else
+                {
+                    <p>Note: @Model.TargetBien.Note</p>
+                }
+              </p>
+            </div>
+        <div class="product-price-btn">
+            <button type="button">buy now</button>
+        </div>
+    </div>
+</div>
+<br />

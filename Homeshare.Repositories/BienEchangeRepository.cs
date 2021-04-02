@@ -41,9 +41,10 @@ namespace Homeshare.Repositories
 
 
 
-        public BienEchangeEntity GetOne(int PK)
+        public BienEchangeEntity GetOne(int idBien)
         {
-            throw new NotImplementedException();
+            string requete = "EXEC [dbo].[sp_RecupToutesInfosBien]" + @idBien;
+            return base.GetOne(idBien, requete);
         }
 
         public bool Insert(BienEchangeEntity toInsert)

@@ -142,6 +142,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\styleBienMember.css" />
     <Content Include="css\styleProfil.css" />
+    <Content Include="css\styleProperty.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\din.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -245,6 +246,7 @@
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\Properties.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\Property.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

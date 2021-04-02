@@ -40,6 +40,8 @@ namespace Homeshare.Repositories
                 b.IsEnabled = bien.IsEnabled;
                 b.IdMembre = bien.IdMembre;
                 b.Pays = bien.Libelle;
+                b.IdBien = bien.IdBien;
+                b.Pays = bien.Libelle;
 
 
                 bem.Add(b);
@@ -93,6 +95,31 @@ namespace Homeshare.Repositories
                 bem.Add(be);
             }
             return bem;
+        }
+        public BienEchangeModel GetOneBienByPage(int PK)
+        {
+            BienEchangeModel be = new BienEchangeModel();
+            BienEchangeEntity bien = _bienEchangeRepo.GetOne(PK);
+                be.Titre = bien.Titre;
+                be.DescCourte = bien.DescCourte;
+                be.Latitude = bien.Latitude;
+                be.Longitude = bien.Longitude;
+                be.NombrePerson = bien.NombrePerson;
+                be.Note = bien.Note;
+                be.Numero = bien.Numero;
+                be.Photo = bien.Photo;
+                be.Numero = bien.Numero;
+                be.Rue = bien.Rue;
+                be.Ville = bien.Ville;
+                be.DescLong = bien.DescLong;
+                be.CodePostale = bien.CodePostale;
+                be.DateCreation = bien.DateCreation;
+                be.AssuranceObligatoire = bien.AssuranceObligatoire;
+                be.IdMembre = bien.IdMembre;
+                be.IdBien = bien.IdBien;
+                be.Pays = bien.Libelle;
+
+            return be;
         }
 
         public List<PaysListModel> SelectPays()

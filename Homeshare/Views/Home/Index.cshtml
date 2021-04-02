@@ -126,14 +126,14 @@
                         else
                         {<div class="status sold"></div>}
                     </div>
-                    <h4><a href="property-detail.php">@item.Titre</a></h4>
+                    <h4><a href="@Url.Action("Property", "Home", new { id = @item.IdBien})">@item.Titre</a></h4>
                     <p class="price">@item.DescCourte</p>
                     <div class="listing-detail">
                         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Capacity">
                             @item.NombrePerson
                         </span>
                     </div>
-                    <a class="btn btn-primary" href="property-detail.php">View Details</a>
+                    <a class="btn btn-primary" href="@Url.Action("Property", "Home", new { id = @item.IdBien})">View Details</a>
                 </div>
             }
         </div>
@@ -180,7 +180,7 @@
                                         <div class="col-lg-8">
                                             <h5><a href="property-detail.php">@Model.MeilleursAvis[i].Titre</a></h5>
                                             <p class="price">Note: @Model.MeilleursAvis[i].Note</p>
-                                            <a href="property-detail.php" class="more">More Detail</a>
+                                            @*<a href="@Url.Action("Property", "Home", new { id = @Model.MeilleursAvis[i].IdBien})" class="more">More Detail</a>*@
                                         </div>
                                     </div>
                                 </div>

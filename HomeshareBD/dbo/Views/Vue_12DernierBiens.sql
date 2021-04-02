@@ -1,6 +1,6 @@
 ﻿CREATE VIEW [dbo].[Vue_12DernierBiens]
 AS
-SELECT     TOP (12) idBien, titre, DescCourte, DescLong, NombrePerson, Pays.Libelle AS Libelle, Ville, Rue, Numero, CodePostal, Photo, AssuranceObligatoire, isEnabled, DisabledDate, Latitude, Longitude, idMembre, 
+SELECT     TOP (12) BienEchange.idBien AS IdBien, titre, DescCourte, DescLong, NombrePerson, Pays.Libelle AS Libelle, Ville, Rue, Numero, CodePostal, Photo, AssuranceObligatoire, isEnabled, DisabledDate, Latitude, Longitude, idMembre, 
                       DateCreation
 FROM         dbo.BienEchange INNER JOIN Pays ON Pays.idPays = BienEchange.Pays
 ORDER BY DateCreation DESC

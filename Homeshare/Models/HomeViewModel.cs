@@ -14,11 +14,14 @@ namespace Homeshare.Models
         private LoginModel _loginModel;
         private List <BienEchangeModel> _topBienEchangeModel;
         private List<BienEchangeModel> _meilleursAvis;
+        private BienEchangeModel _targetBien;
+
 
         public HomeViewModel()
         {
             TopBienEchangeModel = ctx.Get12DernierBiens();
             MeilleursAvis = ctx.GetMeilleursAvis();
+
         }
         public LoginModel LoginModel
         {
@@ -54,6 +57,18 @@ namespace Homeshare.Models
             set
             {
                 _meilleursAvis = value;
+            }
+        }
+        public BienEchangeModel TargetBien
+        {
+            get
+            {
+                return _targetBien;
+            }
+
+            set
+            {
+                _targetBien = value;
             }
         }
     }
