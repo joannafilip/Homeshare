@@ -39,6 +39,7 @@ namespace Homeshare.Repositories
                 b.Titre = bien.Titre;
                 b.IsEnabled = bien.IsEnabled;
                 b.IdMembre = bien.IdMembre;
+                b.Pays = bien.Libelle;
 
 
                 bem.Add(b);

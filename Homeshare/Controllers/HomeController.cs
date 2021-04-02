@@ -62,7 +62,7 @@ namespace Homeshare.Controllers
         {
             return View();
         }
-        public ActionResult Buy()
+        public ActionResult Properties()
         {
             return View();
         }

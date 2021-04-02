@@ -155,7 +155,6 @@
     <Content Include="images\agents\4.jpg" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\bg.jpg" />
-    <Content Include="images\bginside.jpg" />
     <Content Include="images\Biens\7\1.jpg" />
     <Content Include="images\Biens\7\2.jpg" />
     <Content Include="images\blog\1.jpg" />
@@ -244,7 +243,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Agents.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
-    <Content Include="Views\Home\Buy.cshtml" />
+    <Content Include="Views\Home\Properties.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
