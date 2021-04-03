@@ -167,6 +167,8 @@
     <Content Include="images\instagram.png" />
     <Content Include="images\linkedin.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\logo2.jpg" />
+    <Content Include="images\logo3.jpg" />
     <Content Include="images\properties\1.jpg" />
     <Content Include="images\properties\2.jpg" />
     <Content Include="images\properties\3.jpg" />

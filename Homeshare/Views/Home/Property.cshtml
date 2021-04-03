@@ -15,43 +15,33 @@
     <div class="product-info">
         <div class="product-text">
             <h1>@Model.TargetBien.Titre</h1>
-            <h6>@Model.TargetBien.Rue, @Model.TargetBien.Ville, @Model.TargetBien.Pays</h6>
+            <h6>Rue @Model.TargetBien.Rue, @Model.TargetBien.Ville, @Model.TargetBien.Pays</h6>
             <p>
                 @Model.TargetBien.DescCourte<br> Latidude : @Model.TargetBien.Latitude<br> Longitude : @Model.TargetBien.Longitude<br> Nombre de personnes : @Model.TargetBien.NombrePerson
+
                 @if (@Model.TargetBien.AssuranceObligatoire)
 
                 {
-                <p>Assurance obligatoire</p>
-                }
-            else
-            {
-                <p>Unavailable</p>
-            }
-
-
-                @if (@Model.TargetBien.IsEnabled)
-
-                {
-                    <p>Disponible</p>
+                    <h6>Assurance obligatoire</h6>
                 }
                 else
                 {
-                    <p>Pas disponible</p>
+
                 }
 
                 @if (@Model.TargetBien.Note == 0)
 
                 {
-                    <p>Pas de note</p>
+                    <h6>Pas encore de note</h6>
                 }
                 else
                 {
-                    <p>Note: @Model.TargetBien.Note</p>
+                    <h6>Note: @Model.TargetBien.Note</h6>
                 }
-              </p>
+            </p>
             </div>
         <div class="product-price-btn">
-            <button type="button">buy now</button>
+            <button type="button">Je réserve</button>
         </div>
     </div>
 </div>

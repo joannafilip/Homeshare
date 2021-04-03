@@ -116,11 +116,11 @@ span {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: #ffffff;
-    background-color: #9cebd5;
+    background-color: #64a30a;
     cursor: pointer;
     outline: none;
 }
 
     .product-price-btn button:hover {
-        background-color: #79b0a1;
+        background-color: #5cb85c;
     }

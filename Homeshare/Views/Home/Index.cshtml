@@ -180,7 +180,7 @@
                                         <div class="col-lg-8">
                                             <h5><a href="property-detail.php">@Model.MeilleursAvis[i].Titre</a></h5>
                                             <p class="price">Note: @Model.MeilleursAvis[i].Note</p>
-                                            @*<a href="@Url.Action("Property", "Home", new { id = @Model.MeilleursAvis[i].IdBien})" class="more">More Detail</a>*@
+                                            <a href="@Url.Action("Property", "Home", new { id = Model.MeilleursAvis[i].IdBien})" class="more">More Detail</a>
                                         </div>
                                     </div>
                                 </div>
