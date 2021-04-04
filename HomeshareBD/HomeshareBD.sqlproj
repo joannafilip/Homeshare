@@ -87,5 +87,6 @@
     <Build Include="dbo\Views\Vue_12DernierBiens.sql" />
     <Build Include="dbo\Views\V_GetAllProperties.sql" />
     <Build Include="dbo\Views\V_HotProperties.sql" />
+    <Build Include="dbo\Tables\Message.sql" />
   </ItemGroup>
 </Project>

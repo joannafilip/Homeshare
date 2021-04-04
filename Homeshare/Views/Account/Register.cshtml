@@ -1,8 +1,8 @@
 ﻿@model Homeshare.Models.RegisterViewModel
 <div class="inside-banner">
     <div class="container">
-        <span class="pull-right"><a href="#">Home</a> / Register</span>
-        <h2>Register</h2>
+        <span class="pull-right"><a href="#">Home</a> / Inscription</span>
+        <h2>Inscription</h2>
     </div>
 </div>
 <!-- banner -->
@@ -16,19 +16,19 @@
 
                 <form method="post">
                     @Html.AntiForgeryToken()
-                    <input type="text" class="form-control" placeholder="Firstname" name="Prenom">
+                    <input type="text" class="form-control" placeholder="Prenom" name="Prenom">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Nom, "", new { @class = "text-danger" })
-                    <input type="text" class="form-control" placeholder="Lastname" name="Nom">
+                    <input type="text" class="form-control" placeholder="Nom" name="Nom">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Prenom, "", new { @class = "text-danger" })
                     <input type="email" class="form-control" placeholder="Email" name="Email">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Email, "", new { @class = "text-danger" })
-                    <input type="number" class="form-control" placeholder="Phone" name="Telephone">
+                    <input type="number" class="form-control" placeholder="Telephone" name="Telephone">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Telephone, "", new { @class = "text-danger" })
                     <input type="text" class="form-control" placeholder="Login" name="Login">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Login, "", new { @class = "text-danger" })
-                    <input type="password" class="form-control" placeholder="Password" name="Password">
+                    <input type="password" class="form-control" placeholder="Mot de passe" name="Password">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Password, "", new { @class = "text-danger" })
-                    <label for="IdPays">Choose a country: </label>
+                    <label for="IdPays">Choisis le pays : </label>
                     <select name="IdPays">
 
                         @foreach (Homeshare.Models.PaysListModel item in Model.PaysListModel)
@@ -38,7 +38,7 @@
 
                     </select>
 
-                    <button type="submit" class="btn btn-success" name="Submit">Register</button>
+                    <button type="submit" class="btn btn-success" name="Submit">Je m'inscris</button>
                 </form>
 
                 @if (ViewBag.ErrorMessage != null)

@@ -14,12 +14,14 @@ namespace Homeshare.Repositories
         IConcreteRepository<PaysListEntity> _paysListRepo;
         IConcreteRepository<RegisterEntity> _registerRepo;
         IConcreteRepository<BienEchangeEntity> _bienEchangeRepo;
+        IConcreteRepository<MessageEntity> _messageRepo;
 
         public DataContext(string connectionString)
         {
             _paysListRepo = new PaysListRepository(connectionString);
             _registerRepo = new RegisterRepository(connectionString);
             _bienEchangeRepo = new BienEchangeRepository(connectionString);
+            _messageRepo = new MessageRepository(connectionString);
         }
         public List<BienEchangeModel> Get12DernierBiens()
         {
@@ -295,6 +297,17 @@ namespace Homeshare.Repositories
                 return null;
             }
 
+        }
+
+        public bool SaveContact (ContactModel cm)
+        {
+            MessageEntity me = new MessageEntity();
+            me.Prenom = cm.Prenom;
+            me.Nom = cm.Nom;
+            me.Email = cm.Email;
+            me.Message = cm.Message;
+
+            return _messageRepo.Insert(me);
         }
     }
 }

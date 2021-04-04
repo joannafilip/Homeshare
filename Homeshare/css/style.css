@@ -115,8 +115,16 @@ table{background-color: #fff;}
 .login button,.register button,.contact button{width: 100%;border-radius: 5px;}
 
 /*inside*/
-.inside-banner{background:url(../images/bginside.jpg) #222;color: #fff; padding: 30px 0;}
-.inside-banner h2{margin: 0; color: #fff;}
+.inside-banner {
+    background-color: #F2F3F4;
+    color: dimgrey;
+    padding: 30px 0;
+}
+    .inside-banner h2 {
+        margin: 0;
+        color: dimgrey;
+        text-align: center;
+    }
 .inside-banner span{margin-top: 10px;}
 
 .search-form {margin-bottom: 50px;}

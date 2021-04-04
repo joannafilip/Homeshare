@@ -15,6 +15,7 @@ namespace Homeshare.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.Index = "active";
             HomeViewModel hm = new HomeViewModel();
             return View(hm);
         }
@@ -47,20 +48,51 @@ namespace Homeshare.Controllers
 
         public ActionResult About()
         {
+            ViewBag.About = "active";
             return View();
         }
         public ActionResult Agents()
         {
+            ViewBag.Agents = "active";
             return View();
         }
         public ActionResult Blog()
         {
+            ViewBag.Blog= "active";
             return View();
         }
 
+        [HttpGet]
         public ActionResult Contact()
         {
+            ViewBag.Contact = "active";
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Contact(ContactModel contact)
+        {
+            if (ModelState.IsValid)
+            {
+                DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+
+                if (ctx.SaveContact(contact))
+                {
+                    ViewBag.SuccessMessage = "Message a été bien envoyé";
+                    return View();
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Message n'a pas été envoyé";
+                    return View();
+                }
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Form error";
+                return View();
+            }
         }
         public ActionResult Properties(int page = 1, string searchString = null)
         {

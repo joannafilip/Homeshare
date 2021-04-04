@@ -89,7 +89,7 @@ namespace Homeshare.Repositories
             //}
 
 
-            int nbPerPage = 2;
+            int nbPerPage = 6;
             int skip = (page - 1) * nbPerPage;
             requete += $@" ORDER BY Titre OFFSET {skip} ROWS 
                         FETCH NEXT {nbPerPage} ROWS ONLY ";
