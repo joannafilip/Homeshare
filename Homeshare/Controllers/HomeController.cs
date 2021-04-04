@@ -64,7 +64,8 @@ namespace Homeshare.Controllers
         }
         public ActionResult Properties()
         {
-            return View();
+            HomeViewModel hvm = new HomeViewModel();
+            return View(hvm);
         }
         public ActionResult Property(int id)
         {

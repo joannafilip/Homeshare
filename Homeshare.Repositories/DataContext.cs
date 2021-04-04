@@ -23,8 +23,8 @@ namespace Homeshare.Repositories
         }
         public List<BienEchangeModel> Get12DernierBiens()
         {
-            List<BienEchangeModel> bem = new List<BienEchangeModel>(); 
-            List<BienEchangeEntity> derniersBiens = _bienEchangeRepo.Get();
+            List<BienEchangeModel> bem = new List<BienEchangeModel>();
+            List<BienEchangeEntity> derniersBiens = ((BienEchangeRepository)_bienEchangeRepo).Get12DerniersBiens();
 
             foreach (BienEchangeEntity bien in derniersBiens)
             {
@@ -41,7 +41,6 @@ namespace Homeshare.Repositories
                 b.IdMembre = bien.IdMembre;
                 b.Pays = bien.Libelle;
                 b.IdBien = bien.IdBien;
-                b.Pays = bien.Libelle;
 
 
                 bem.Add(b);
@@ -59,14 +58,79 @@ namespace Homeshare.Repositories
                 BienEchangeModel b = new BienEchangeModel();
                 b.Titre = avis.Titre;
                 b.Note = avis.Note;
-                b.IdMembre = avis.IdMembre;
+                b.DescCourte = avis.DescCourte;
+                b.DescLong = avis.DescLong;
+                b.Latitude = avis.Latitude;
+                b.Longitude = avis.Longitude;
+                b.NombrePerson = avis.NombrePerson;
                 b.Photo = avis.Photo;
+                b.Ville = avis.Ville;
+                b.IsEnabled = avis.IsEnabled;
+                b.IdMembre = avis.IdMembre;
+                b.Pays = avis.Libelle;
+                b.IdBien = avis.IdBien;
+                bem.Add(b);
+            }
+            return bem;
+
+        }
+        public List<BienEchangeModel> GetAllProperties()
+        {
+            List<BienEchangeModel> bem = new List<BienEchangeModel>();
+            List<BienEchangeEntity> allProperties = _bienEchangeRepo.Get();
+
+            foreach (BienEchangeEntity property in allProperties)
+            {
+                BienEchangeModel b = new BienEchangeModel();
+                b.Titre = property.Titre;
+                b.Note = property.Note;
+                b.DescCourte = property.DescCourte;
+                b.DescLong = property.DescLong;
+                b.Latitude = property.Latitude;
+                b.Longitude = property.Longitude;
+                b.NombrePerson = property.NombrePerson;
+                b.Photo = property.Photo;
+                b.Ville = property.Ville;
+                b.IsEnabled = property.IsEnabled;
+                b.IdMembre = property.IdMembre;
+                b.Pays = property.Libelle;
+                b.IdBien = property.IdBien;
                 bem.Add(b);
             }
             return bem;
 
         }
 
+        public List<BienEchangeModel> GetHotProperties()
+        {
+            List<BienEchangeModel> bem = new List<BienEchangeModel>();
+            List<BienEchangeEntity> hotProperties = ((BienEchangeRepository)_bienEchangeRepo).GetHotProperties();
+
+            foreach (BienEchangeEntity bien in hotProperties)
+            {
+                BienEchangeModel be = new BienEchangeModel();
+                be.Titre = bien.Titre;
+                be.DescCourte = bien.DescCourte;
+                be.Latitude = bien.Latitude;
+                be.Longitude = bien.Longitude;
+                be.NombrePerson = bien.NombrePerson;
+                be.Note = bien.Note;
+                be.Numero = bien.Numero;
+                be.Photo = bien.Photo;
+                be.Numero = bien.Numero;
+                be.Rue = bien.Rue;
+                be.Ville = bien.Ville;
+                be.DescLong = bien.DescLong;
+                be.CodePostale = bien.CodePostale;
+                be.DateCreation = bien.DateCreation;
+                be.AssuranceObligatoire = bien.AssuranceObligatoire;
+                be.IdMembre = bien.IdMembre;
+                be.IdBien = bien.IdBien;
+                be.Pays = bien.Libelle;
+                bem.Add(be);
+            }
+            return bem;
+        }
         public List<BienEchangeModel> GetBiensMembre(RegisterModel bm )
         {
             List<BienEchangeModel> bem = new List<BienEchangeModel>();

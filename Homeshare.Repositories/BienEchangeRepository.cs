@@ -26,7 +26,7 @@ namespace Homeshare.Repositories
 
             return base.Get(requete);
         }
-        public List<BienEchangeEntity> Get()
+        public List<BienEchangeEntity> Get12DerniersBiens()
         {
             string requete = "Select * from Vue_12DernierBiens";
 
@@ -39,7 +39,18 @@ namespace Homeshare.Repositories
             return base.Get(requete);
         }
 
+        public List<BienEchangeEntity> Get()
+        {
+            string requete = "Select * from V_GetAllProperties";
 
+            return base.Get(requete);
+        }
+        public List<BienEchangeEntity> GetHotProperties()
+        {
+            string requete = "Select * from V_HotProperties";
+
+            return base.Get(requete);
+        }
 
         public BienEchangeEntity GetOne(int idBien)
         {

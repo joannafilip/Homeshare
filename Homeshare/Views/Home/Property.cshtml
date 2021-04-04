@@ -9,9 +9,14 @@
 <br />
 <div class="wrapper">
     <div class="product-img">
-        <img src="~/images/Biens/@Model.TargetBien.IdMembre/@Model.TargetBien.Photo" height="220" width="327" style = "margin-left : 20px; margin-top : 20px">
-        <div style=" margin-left : 20px; margin-top : 20px">@Model.TargetBien.DescLong</div>
+        <img src="~/images/Biens/@Model.TargetBien.IdMembre/@Model.TargetBien.Photo" height="220" width="327" style="margin-left : 20px; margin-top : 20px">
+        <div style=" margin-left : 20px; margin-top : 20px">@Model.TargetBien.DescLong</div>   
+        <div style="margin-left : 20px;">
+            <br/>
+            <a href="/Home/Index/">retour</a>
+        </div>
     </div>
+ 
     <div class="product-info">
         <div class="product-text">
             <h1>@Model.TargetBien.Titre</h1>
@@ -39,10 +44,12 @@
                     <h6>Note: @Model.TargetBien.Note</h6>
                 }
             </p>
-            </div>
+        </div>
         <div class="product-price-btn">
             <button type="button">Je réserve</button>
+
         </div>
+
     </div>
 </div>
 <br />

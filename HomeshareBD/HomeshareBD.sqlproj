@@ -85,5 +85,7 @@
     <Build Include="dbo\FonctionsScalaires\SF_EncryptedPassword.sql" />
     <Build Include="dbo\FonctionsScalaires\SF_GenerateSalt.sql" />
     <Build Include="dbo\Views\Vue_12DernierBiens.sql" />
+    <Build Include="dbo\Views\V_GetAllProperties.sql" />
+    <Build Include="dbo\Views\V_HotProperties.sql" />
   </ItemGroup>
 </Project>

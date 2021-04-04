@@ -1,0 +1,18 @@
+﻿@model Homeshare.Models.BienEchangeModel
+<div class="properties">
+    <div class="image-holder">
+        <img src="~/images/Biens/@Model.IdMembre/@Model.Photo" class="img-responsive" style="height : 150px ;width: 250px;" alt="properties" />
+        @if (@Model.IsEnabled == true)
+        {<div class="status sold">Available</div> }
+        else
+        {<div class="status sold"></div>}
+    </div>
+    <h4><a href="@Url.Action("Property", "Home", new { id = @Model.IdBien})">@Model.Titre</a></h4>
+    <p class="price">@Model.DescCourte</p>
+    <div class="listing-detail">
+        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Capacity">
+            @Model.NombrePerson
+        </span>
+    </div>
+    <a class="btn btn-primary" href="@Url.Action("Property", "Home", new { id = @Model.IdBien})">View Details</a>
+</div>
