@@ -100,7 +100,6 @@ namespace Homeshare.Repositories
             return bem;
 
         }
-
         public List<BienEchangeModel> GetHotProperties()
         {
             List<BienEchangeModel> bem = new List<BienEchangeModel>();
@@ -130,6 +129,39 @@ namespace Homeshare.Repositories
                 bem.Add(be);
             }
             return bem;
+        }
+        public int CountProperties()
+        {
+            return ((BienEchangeRepository)_bienEchangeRepo).Get().Count();
+        }
+        public List<BienEchangeModel> GetPropertyByPage(int page, string searchString)
+        {
+            List<BienEchangeModel> bem = new List<BienEchangeModel>();
+            List<BienEchangeEntity> allPropertiesFromDb = ((BienEchangeRepository)_bienEchangeRepo).GetPropertyByPage(page, searchString);
+
+            foreach (BienEchangeEntity property in allPropertiesFromDb)
+            {
+                BienEchangeModel b = new BienEchangeModel();
+                b.Titre = property.Titre;
+                b.Note = property.Note;
+                b.DescCourte = property.DescCourte;
+                b.DescLong = property.DescLong;
+                b.Latitude = property.Latitude;
+                b.Longitude = property.Longitude;
+                b.NombrePerson = property.NombrePerson;
+                b.Photo = property.Photo;
+                b.Ville = property.Ville;
+                b.IsEnabled = property.IsEnabled;
+                b.IdMembre = property.IdMembre;
+                b.Pays = property.Libelle;
+                b.IdBien = property.IdBien;
+                bem.Add(b);
+            }
+            return bem;
+        }
+        public int CountPropertiesAllPage(int page, string searchString)
+        {
+            return ((BienEchangeRepository)_bienEchangeRepo).GetPropertyByPage(page, searchString).Count();
         }
         public List<BienEchangeModel> GetBiensMembre(RegisterModel bm )
         {
@@ -185,7 +217,6 @@ namespace Homeshare.Repositories
 
             return be;
         }
-
         public List<PaysListModel> SelectPays()
         {
             List<PaysListModel> plm = new List<PaysListModel>();
@@ -238,7 +269,6 @@ namespace Homeshare.Repositories
             return _bienEchangeRepo.Insert(bee);
 
         }
-
         public RegisterModel UserAuth(LoginModel lm)
         {
             RegisterEntity re = ((RegisterRepository)_registerRepo).GetFromLogin(lm.Login, lm.Password);

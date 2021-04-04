@@ -12,12 +12,32 @@ namespace Homeshare.Models
     {
         private DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
         private LoginModel _loginModel;
-        private List <BienEchangeModel> _topBienEchangeModel;
+        private List<BienEchangeModel> _topBienEchangeModel;
         private List<BienEchangeModel> _meilleursAvis;
         private List<BienEchangeModel> _allProperties;
         private List<BienEchangeModel> _hotProperties;
+        private List<BienEchangeModel> _properties;
         private BienEchangeModel _targetBien;
+        private int _maxProperty, _maxPage;
 
+
+        public void PaginateProperty (int page=1, string searchString=null)
+        {
+            Properties = ctx.GetPropertyByPage(page, searchString);
+            if (searchString != null)
+            {
+                MaxProperty = ctx.CountPropertiesAllPage(page, searchString);
+                if ((MaxProperty % 3) == 0)
+                {
+                    MaxPage = MaxProperty / 3;
+                }
+                else
+                {
+                    double nbPage = MaxProperty / 3;
+                    MaxPage = (int)Math.Floor(nbPage) + 1;
+                }
+            }
+        }
 
         public HomeViewModel()
         {
@@ -25,6 +45,17 @@ namespace Homeshare.Models
             MeilleursAvis = ctx.GetMeilleursAvis();
             AllProperties = ctx.GetAllProperties();
             HotProperties = ctx.GetHotProperties();
+
+            MaxProperty = ctx.CountProperties();
+            if ((MaxProperty % 3) == 0)
+            {
+                MaxPage = MaxProperty / 3;
+            }
+            else
+            {
+                double nbPage = MaxProperty / 3;
+                MaxPage = (int)Math.Floor(nbPage) + 1;
+            }
 
         }
         public LoginModel LoginModel
@@ -87,6 +118,18 @@ namespace Homeshare.Models
                 _hotProperties = value;
             }
         }
+        public List<BienEchangeModel> Properties
+        {
+            get
+            {
+                return _properties;
+            }
+
+            set
+            {
+                _properties = value;
+            }
+        }
         public BienEchangeModel TargetBien
         {
             get
@@ -97,6 +140,30 @@ namespace Homeshare.Models
             set
             {
                 _targetBien = value;
+            }
+        }
+        public int MaxProperty
+        {
+            get
+            {
+                return _maxProperty;
+            }
+
+            set
+            {
+                _maxProperty = value;
+            }
+        }
+        public int MaxPage
+        {
+            get
+            {
+                return _maxPage;
+            }
+
+            set
+            {
+                _maxPage = value;
             }
         }
     }

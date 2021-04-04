@@ -52,6 +52,87 @@ namespace Homeshare.Repositories
             return base.Get(requete);
         }
 
+        public List<BienEchangeEntity> GetPropertyByPage(int page, string searchString)
+        {
+            string requete = $@"Select * from V_GetAllProperties";
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requete += " WHERE Titre LIKE '%" + searchString + "%' ";
+                //if (!String.IsNullOrEmpty(type))
+                //{
+                //    requete += $" AND Type = '{type}' ";
+                //}
+            }
+            else
+            {
+                //if (!String.IsNullOrEmpty(type))
+                //{
+                //    requete += $" WHERE Type = '{type}' ";
+                //}
+            }
+
+            //switch (sortOrder)
+            //{
+            //    case "name_desc":
+            //        requete += " ORDER BY NomProduit DESC ";
+            //        break;
+            //    case "date_asc":
+            //        requete += " ORDER BY DatePeremption ASC ";
+            //        break;
+            //    case "date_desc":
+            //        requete += " ORDER BY DatePeremption DESC ";
+            //        break;
+            //    default:
+            //        requete += " ORDER BY NomProduit ";
+            //        break;
+            //}
+
+
+            int nbPerPage = 2;
+            int skip = (page - 1) * nbPerPage;
+            requete += $@" ORDER BY Titre OFFSET {skip} ROWS 
+                        FETCH NEXT {nbPerPage} ROWS ONLY ";
+            return base.Get(requete);
+        }
+        public List<BienEchangeEntity> GetPropertiesAllPage(int page, string searchString)
+        {
+            string requete = $@"SELECT * FROM V_GetAllProperties";
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requete += " WHERE Titre LIKE '%" + searchString + "%' ";
+                //if (!String.IsNullOrEmpty(type))
+                //{
+                //    requete += $" AND Type = '{type}' ";
+                //}
+            }
+            //else
+            //{
+            //    //if (!String.IsNullOrEmpty(type))
+            //    //{
+            //    //    requete += $" WHERE Type = '{type}' ";
+            //    //}
+            //}
+            //switch (sortOrder)
+            //{
+            //    case "name_desc":
+            //        requete += " ORDER BY NomProduit DESC ";
+            //        break;
+            //    case "date_asc":
+            //        requete += " ORDER BY DatePeremption ASC ";
+            //        break;
+            //    case "date_desc":
+            //        requete += " ORDER BY DatePeremption DESC ";
+            //        break;
+            //    default:
+            //        requete += " ORDER BY NomProduit ";
+            //        break;
+            //}
+
+            return base.Get(requete);
+        }
+
         public BienEchangeEntity GetOne(int idBien)
         {
             string requete = "EXEC [dbo].[sp_RecupToutesInfosBien]" + @idBien;
