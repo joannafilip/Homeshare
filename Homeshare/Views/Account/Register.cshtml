@@ -1,28 +1,26 @@
 ﻿@model Homeshare.Models.RegisterViewModel
 <div class="inside-banner">
     <div class="container">
-        <span class="pull-right"><a href="#">Home</a> / Inscription</span>
+        <span class="pull-right"><a href="/Home/Index">Home</a> / Inscription</span>
         <h2>Inscription</h2>
     </div>
 </div>
 <!-- banner -->
 
 
-<div class="container">
+<div class="container" style="margin-bottom : 50px;">
     <div class="spacer">
-        <div class="row register">
+        <div class="row4 register">
             <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
-
-
                 <form method="post">
                     @Html.AntiForgeryToken()
-                    <input type="text" class="form-control" placeholder="Prenom" name="Prenom">
+                    <input type="text" class="form-control" placeholder="Prénom" name="Prenom">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Nom, "", new { @class = "text-danger" })
                     <input type="text" class="form-control" placeholder="Nom" name="Nom">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Prenom, "", new { @class = "text-danger" })
                     <input type="email" class="form-control" placeholder="Email" name="Email">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Email, "", new { @class = "text-danger" })
-                    <input type="number" class="form-control" placeholder="Telephone" name="Telephone">
+                    <input type="number" class="form-control" placeholder="Téléphone" name="Telephone">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Telephone, "", new { @class = "text-danger" })
                     <input type="text" class="form-control" placeholder="Login" name="Login">
                     @Html.ValidationMessageFor(model => model.RegisterModel.Login, "", new { @class = "text-danger" })

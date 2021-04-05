@@ -44,13 +44,48 @@ namespace Homeshare.Controllers
                  
             }
             else
-                {
+            {
                     ViewBag.ErrorMessage = "Sign Up error";
                     RegisterViewModel rvm = new RegisterViewModel();
                     return View(rvm);
             }
-                
-           
         }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+
+            HomeViewModel hvm = new HomeViewModel();
+            return View(hvm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginModel lm)
+        {
+           DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+                if (ModelState.IsValid)
+                {
+                    RegisterModel rm = ctx.UserAuth(lm);
+                    if (rm == null)
+                    {
+                        ViewBag.Error = "Erreur Login/Password";
+                        return View();
+                    }
+                    else
+                    {
+                        SessionUtils.IsLogged = true;
+                        SessionUtils.ConnectedUser = rm;
+                        return RedirectToAction("Index", "Home", new { area = "Member" });
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+
+
+       
     }
 }

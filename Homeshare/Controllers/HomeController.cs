@@ -12,38 +12,12 @@ namespace Homeshare.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet]
+
         public ActionResult Index()
         {
             ViewBag.Index = "active";
             HomeViewModel hm = new HomeViewModel();
             return View(hm);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(LoginModel lm)
-        {
-            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
-            if (ModelState.IsValid)
-            {
-                RegisterModel rm = ctx.UserAuth(lm);
-                if (rm == null)
-                {
-                    ViewBag.Error = "Erreur Login/Password";
-                    return View();
-                }
-                else
-                {
-                    SessionUtils.IsLogged = true;
-                    SessionUtils.ConnectedUser = rm;
-                    return RedirectToAction("Index", "Home", new { area = "Member" });
-                }
-            }
-            else
-            {
-                return View();
-            }
         }
 
         public ActionResult About()

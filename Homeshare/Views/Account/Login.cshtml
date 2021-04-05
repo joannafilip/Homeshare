@@ -1,0 +1,33 @@
+﻿@model Homeshare.Models.HomeViewModel
+
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="/Home/Index">Home</a> / Se connecter</span>
+        <h2>Se connecter</h2>
+    </div>
+</div>
+
+
+<div class="container" style="margin-bottom : 100px;">
+    <div class="spacer">
+        <div class="row3 register">
+            <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Login" name="Login">
+                    @Html.ValidationMessageFor(model => model.LoginModel.Login, "", new { @class = "text-danger" })
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Mot de passe" name="Password">
+                    @Html.ValidationMessageFor(model => model.LoginModel.Password, "", new { @class = "text-danger" })
+                    <button type="submit" class="btn btn-success" name="Submit">Je me connecte</button>
+                </form>
+
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>
