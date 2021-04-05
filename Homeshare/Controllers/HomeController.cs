@@ -96,11 +96,11 @@ namespace Homeshare.Controllers
         }
         public ActionResult Properties(int page = 1, string searchString = null)
         {
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
             //ViewBag.DateSort = String.IsNullOrEmpty(sortOrder) ? "date_asc" : "date_desc";
             //ViewBag.NameSort = sortOrder == "name_asc" ? "" : "name_asc";
             HomeViewModel hvm = new HomeViewModel();
             hvm.PaginateProperty(page, searchString);
-            
             return View(hvm);
         }
         public ActionResult Property(int id)

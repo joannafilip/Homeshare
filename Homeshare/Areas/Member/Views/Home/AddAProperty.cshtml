@@ -1,4 +1,4 @@
-﻿@model Homeshare.Models.AreaViewModel
+﻿@model Homeshare.Models.BienEchangeModel
 
 @{
     ViewBag.Title = "AddAProperty";
@@ -8,11 +8,11 @@
 <form method="post">
     @Html.AntiForgeryToken()
     Title: <input type="text" class="form-control" placeholder="Title" name="Titre">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.Titre, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Titre, "", new { @class = "text-danger" })
     Short Description: <input type="text" class="form-control" placeholder="Short Description" name="DescCourte">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.DescCourte, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.DescCourte, "", new { @class = "text-danger" })
     Description: <input type="text" class="form-control" placeholder="Description" name="DescLong">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.DescLong, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.DescLong, "", new { @class = "text-danger" })
     <label for="IdPays">Choose a country: </label>
     <select name="IdPays">
 
@@ -23,15 +23,15 @@
     </select>
     <br />
     City: <input type="text" class="form-control" placeholder="City" name="Ville">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.Ville, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Ville, "", new { @class = "text-danger" })
     CP: <input type="text" class="form-control" placeholder="CP" name="CodePostale">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.CodePostale, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.CodePostale, "", new { @class = "text-danger" })
     Number: <input type="number" class="form-control" placeholder="Number" name="Numero">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.Numero, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
     Rue: <input type="text" class="form-control" placeholder="Street" name="Rue">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.Rue, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Rue, "", new { @class = "text-danger" })
     Photo: <input type="text" class="form-control" placeholder="Photo" name="Photo">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.Photo, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
     <label for="NombrePerson">People: </label>
     <select name="NombrePerson">
 
@@ -43,15 +43,13 @@
     </select>
     <br />
     Insurance: <input type="checkbox" class="form-control" placeholder="Insurance" name="AssuranceObligatoire">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.AssuranceObligatoire, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.AssuranceObligatoire, "", new { @class = "text-danger" })
     Is Enabled: <input type="checkbox" class="form-control" placeholder="Is Enabled" name="IsEnabled">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.IsEnabled, "", new { @class = "text-danger" })
-    DisabledDate: <input type="date" class="form-control" placeholder="Disabled Date" name="DisabledDate">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.DisabledDate, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.IsEnabled, "", new { @class = "text-danger" })
     Latitude: <input type="number" class="form-control" placeholder="Latitude" name="Latitude">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.Latitude, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
     Longitude: <input type="number" class="form-control" placeholder="Longitude" name="Longitude">
-    @Html.ValidationMessageFor(model => model.BienEchangeModel.Longitude, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
 
     <button type="submit" class="btn btn-success" name="Submit">Publish</button>
 </form>

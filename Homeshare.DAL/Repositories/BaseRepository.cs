@@ -319,6 +319,14 @@ namespace Foodsharing.DAL.Repositories
             //Mapping
             foreach (PropertyInfo item in maClasse.GetProperties())
             {
+                if (item.PropertyType == typeof(DateTime) && (DateTime)item.GetValue(toMap) == DateTime.MinValue)
+                {
+
+                }
+                else
+                {
+
+                
                 SqlParameter param = new SqlParameter();
                 param.ParameterName = item.Name;
 
@@ -340,6 +348,7 @@ namespace Foodsharing.DAL.Repositories
                 //  param.SqlDbType= System.Data.SqlDbType.NVarChar ~= string ==> Dépend du type de la propriété
                 //  param.Size = 50;
                 parametres.Add(param);
+            }
             }
 
             return parametres.ToArray();

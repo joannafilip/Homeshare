@@ -20,8 +20,27 @@ namespace Homeshare.Models
         private BienEchangeModel _targetBien;
         private int _maxProperty, _maxPage;
 
+        public HomeViewModel()
+        {
+            MaxProperty = ctx.CountProperties();
+            if ((MaxProperty % 3) == 0)
+            {
+                MaxPage = MaxProperty / 3;
+            }
+            else
+            {
+                double nbPage = MaxProperty / 3;
+                MaxPage = (int)Math.Floor(nbPage) + 1;
+            }
+            TopBienEchangeModel = ctx.Get12DernierBiens();
+            MeilleursAvis = ctx.GetMeilleursAvis();
+            AllProperties = ctx.GetAllProperties();
+            HotProperties = ctx.GetHotProperties();
 
-        public void PaginateProperty (int page=1, string searchString=null)
+        
+
+        }
+        public void PaginateProperty(int page = 1, string searchString = null)
         {
             Properties = ctx.GetPropertyByPage(page, searchString);
             if (searchString != null)
@@ -37,26 +56,6 @@ namespace Homeshare.Models
                     MaxPage = (int)Math.Floor(nbPage) + 1;
                 }
             }
-        }
-
-        public HomeViewModel()
-        {
-            TopBienEchangeModel = ctx.Get12DernierBiens();
-            MeilleursAvis = ctx.GetMeilleursAvis();
-            AllProperties = ctx.GetAllProperties();
-            HotProperties = ctx.GetHotProperties();
-
-            MaxProperty = ctx.CountProperties();
-            if ((MaxProperty % 3) == 0)
-            {
-                MaxPage = MaxProperty / 3;
-            }
-            else
-            {
-                double nbPage = MaxProperty / 3;
-                MaxPage = (int)Math.Floor(nbPage) + 1;
-            }
-
         }
         public LoginModel LoginModel
         {

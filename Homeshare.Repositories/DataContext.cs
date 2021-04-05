@@ -134,7 +134,7 @@ namespace Homeshare.Repositories
         }
         public int CountProperties()
         {
-            return ((BienEchangeRepository)_bienEchangeRepo).Get().Count();
+            return _bienEchangeRepo.Get().Count();
         }
         public List<BienEchangeModel> GetPropertyByPage(int page, string searchString)
         {
@@ -256,7 +256,6 @@ namespace Homeshare.Repositories
             bee.DateCreation = bem.DateCreation;
             bee.DescCourte = bem.DescCourte;
             bee.DescLong = bem.DescLong;
-            bee.DisabledDate = bem.DisabledDate;
             bee.IdMembre = bem.IdMembre;
             bee.IsEnabled = bem.IsEnabled;
             bee.Latitude = bem.Latitude;
@@ -267,6 +266,7 @@ namespace Homeshare.Repositories
             bee.Photo = bem.Photo;
             bee.Rue = bem.Rue;
             bee.Ville = bem.Ville;
+            bee.Pays = bem.IdPays;
             bee.AssuranceObligatoire = bem.AssuranceObligatoire;
             return _bienEchangeRepo.Insert(bee);
 

@@ -2,19 +2,21 @@
 	AS
 SELECT 
 	  BienEchange.idBien AS IdBien, 
-	  titre, 
+	  BienEchange.titre AS Titre, 
 	  DescCourte, 
 	  DescLong, 
 	  NombrePerson, 
 	  Pays.Libelle AS Libelle, 
-	  Ville, Rue, Numero, 
+	  Ville, 
+	  Rue, 
+	  Numero, 
 	  CodePostal, 
 	  Photo, 
 	  AssuranceObligatoire, 
-	  isEnabled, 
+	  BienEchange.isEnabled AS IsEnabled, 
 	  DisabledDate, 
 	  Latitude, 
 	  Longitude, 
-	  idMembre, 
+	  BienEchange.idMembre AS IdMembre, 
       DateCreation
 FROM  BienEchange INNER JOIN Pays ON Pays.idPays = BienEchange.Pays

@@ -89,7 +89,7 @@ namespace Homeshare.Repositories
             //}
 
 
-            int nbPerPage = 6;
+            int nbPerPage = 3;
             int skip = (page - 1) * nbPerPage;
             requete += $@" ORDER BY Titre OFFSET {skip} ROWS 
                         FETCH NEXT {nbPerPage} ROWS ONLY ";
@@ -141,23 +141,21 @@ namespace Homeshare.Repositories
 
         public bool Insert(BienEchangeEntity toInsert)
         {
-            string requete = @"EXEC [dbo].[sp_InsertBien] 
+            string requete = @"EXEC [dbo].[SP_InsertBien] 
                                                     @titre
                                                    ,@descCourte
                                                    ,@descLong
                                                    ,@nombrePerson
-                                                   ,@idPays
+                                                   ,@pays
                                                    ,@ville
                                                    ,@rue
                                                    ,@numero
-                                                   ,@codePostal
+                                                   ,@codePostale
                                                    ,@photo
                                                    ,@assuranceObligatoire
                                                    ,@isEnabled
-                                                   ,@disabledDate
                                                    ,@latitude
                                                    ,@longitude
-                                                   ,@dateCreation
                                                    ,@idMembre";
             return base.Insert(toInsert, requete);
         }

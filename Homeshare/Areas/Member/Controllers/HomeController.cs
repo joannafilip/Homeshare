@@ -29,17 +29,22 @@ namespace Homeshare.Areas.Member.Controllers
         [HttpGet]
         public ActionResult AddAProperty()
         {
-            AreaViewModel avm = new AreaViewModel();
-            return View(avm);
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            BienEchangeModel bem = new BienEchangeModel();
+            bem.PaysListModel = ctx.SelectPays(); 
+            return View(bem);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddAProperty(BienEchangeModel bem)
+        public ActionResult AddAProperty(BienEchangeModel bm)
         {
-            AreaViewModel avm = new AreaViewModel();
-            return View(avm);
-           
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            bm.IdMembre = SessionUtils.ConnectedUser.IdMembre;
+            ctx.InsertBien(bm);
+
+            return RedirectToAction("Index", "Home", new { area = "" });
+
         }
         //[HttpGet]
         public ActionResult Logout()
