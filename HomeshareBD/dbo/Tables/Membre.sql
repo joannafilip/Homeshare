@@ -8,6 +8,7 @@
     [Login]     NVARCHAR (50)  NULL,
     [Password]  NVARCHAR (256) NULL,
     [Salt]      CHAR (8)       NULL,
+    [Photo] NVARCHAR(256) NULL, 
     CONSTRAINT [PK_membre] PRIMARY KEY CLUSTERED ([idMembre] ASC)
 );
 

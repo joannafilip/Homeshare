@@ -1,0 +1,30 @@
+﻿@model Homeshare.Models.RegisterModel
+@{
+    ViewBag.Title = "EditPhoto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="/Home/Index">Home</a> / Change photo</span>
+        <h2>Change photo</h2>
+    </div>
+</div>
+
+
+<div class="container" style="margin-bottom : 100px;">
+    <div class="spacer">
+        <div class="row5 register">
+            <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
+                <form method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <input type="file" name="FilePhoto" class="form-control" />
+                    <input type="submit" value="Enregistrer" class="btn btn-success" />
+                </form>
+                <br />
+                <a href="/Member/Home/Index">Retour</a>
+            </div>
+        </div>
+    </div>
+</div>
+

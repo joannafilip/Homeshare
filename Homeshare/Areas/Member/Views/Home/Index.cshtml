@@ -9,14 +9,14 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 @{
-    string ProfilePicture = "";
+    string ProfilePhoto= "";
     if (Model.Photo == null || Model.Photo == "")
     {
-        ProfilePicture = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog";
+        ProfilePhoto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog";
     }
     else
     {
-        ProfilePicture = "/images/Users/" + Model.IdMembre + "/" + Model.Photo;
+        ProfilePhoto = "/images/Users/" + Model.IdMembre + "/" + Model.Photo;
     }
 }
 <!------ Include the above in your HEAD tag ---------->
@@ -26,11 +26,10 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="@ProfilePicture" alt="" />
-                    <a href="~/Member/Home/EditPhoto" class="file btn btn-lg btn-primary">
-                        Change Photo
+                    <img src="@ProfilePhoto" alt="" />
+                    <a href="/Member/Home/EditPhoto" class="file btn btn-lg btn-primary">
+                        Change photo
                     </a>
-                    @*<input type="file" name="file" />*@
 
                 </div>
             </div>

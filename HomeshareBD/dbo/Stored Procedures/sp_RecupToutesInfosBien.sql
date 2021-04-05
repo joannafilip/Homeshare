@@ -16,7 +16,7 @@ SELECT
        ,Rue
        ,Numero
        ,CodePostal
-       ,Photo
+       ,BienEchange.Photo AS Photo
        ,AssuranceObligatoire
        ,isEnabled
        ,DisabledDate

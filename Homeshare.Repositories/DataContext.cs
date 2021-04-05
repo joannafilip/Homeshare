@@ -287,7 +287,8 @@ namespace Homeshare.Repositories
                     Email = re.Email,
                     Telephone = re.Telephone,
                     Pays = re.Libelle,
-                    IdMembre = re.IdMembre
+                    IdMembre = re.IdMembre,
+                    Photo = re.Photo
                     
                     
                 };
@@ -308,6 +309,17 @@ namespace Homeshare.Repositories
             me.Message = cm.Message;
 
             return _messageRepo.Insert(me);
+        }
+
+
+        public bool EditMemberPhoto(RegisterModel rm)
+        {
+            RegisterEntity re = new RegisterEntity();
+            re.IdMembre = rm.IdMembre;
+            re.Photo = rm.Photo;
+
+            return ((RegisterRepository)_registerRepo).UpdatePhoto(re);
+
         }
     }
 }

@@ -199,6 +199,8 @@
     <Content Include="images\Biens\4\cottage4.jpg" />
     <Content Include="images\Biens\4\maison1.jpg" />
     <Content Include="images\Biens\7\appart2.jpg" />
+    <Content Include="images\Users\2005\download.png" />
+    <Content Include="images\Users\7\download.png" />
     <Content Include="owl-carousel\AjaxLoader.gif" />
     <Content Include="owl-carousel\grabbing.png" />
     <Content Include="owl-carousel\owl.carousel.css" />
@@ -213,6 +215,7 @@
     <Content Include="Areas\Member\Views\Shared\_Profil.cshtml" />
     <Content Include="Areas\Member\Views\Home\MyProperties.cshtml" />
     <Content Include="Areas\Member\Views\Home\AddAProperty.cshtml" />
+    <Content Include="Areas\Member\Views\Home\EditPhoto.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

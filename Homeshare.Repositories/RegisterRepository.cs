@@ -58,5 +58,11 @@ namespace Homeshare.Repositories
         {
             throw new NotImplementedException();
         }
+        public bool UpdatePhoto (RegisterEntity toUpdate)
+        {
+            string request = @"UPDATE [Membre] SET [Photo]=@Photo
+                              WHERE IdMembre=@IdMembre";
+            return base.Update(toUpdate, request);
+        }
     }
 }
