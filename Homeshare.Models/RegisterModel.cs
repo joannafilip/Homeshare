@@ -9,7 +9,7 @@ namespace Homeshare.Models
 {
     public class RegisterModel
     {
-        private string _nom, _prenom, _email, _login, _password, _telephone, _pays;
+        private string _nom, _prenom, _email, _login, _password, _telephone, _pays, _photo;
         private int _idMembre;
         private List <BienEchangeModel> _bienEchangeModel;
 
@@ -107,6 +107,18 @@ namespace Homeshare.Models
             set
             {
                 _pays = value;
+            }
+        }
+        public string Photo
+        {
+            get
+            {
+                return _photo;
+            }
+
+            set
+            {
+                _photo = value;
             }
         }
         public int IdMembre

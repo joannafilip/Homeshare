@@ -6,17 +6,27 @@
 }
 
 @Styles.Render("~/Content/profil")
-@*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">*@
-@*<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>*@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+@{
+    string ProfilePicture = "";
+    if (Model.Photo == null || Model.Photo == "")
+    {
+        ProfilePicture = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog";
+    }
+    else
+    {
+        ProfilePicture = "/images/Users/" + Model.IdMembre + "/" + Model.Photo;
+    }
+}
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container emp-profile">
-    <form>
+    <form method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="" />
+                    <img src="@ProfilePicture" alt="" />
                     <a href="~/Member/Home/EditPhoto" class="file btn btn-lg btn-primary">
                         Change Photo
                     </a>
