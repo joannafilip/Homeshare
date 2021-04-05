@@ -4,56 +4,71 @@
     ViewBag.Title = "AddAProperty";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>Add a Property</h1>
-<form method="post">
-    @Html.AntiForgeryToken()
-    Title: <input type="text" class="form-control" placeholder="Title" name="Titre">
-    @Html.ValidationMessageFor(model => model.Titre, "", new { @class = "text-danger" })
-    Short Description: <input type="text" class="form-control" placeholder="Short Description" name="DescCourte">
-    @Html.ValidationMessageFor(model => model.DescCourte, "", new { @class = "text-danger" })
-    Description: <input type="text" class="form-control" placeholder="Description" name="DescLong">
-    @Html.ValidationMessageFor(model => model.DescLong, "", new { @class = "text-danger" })
-    <label for="IdPays">Choose a country: </label>
-    <select name="IdPays">
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="/Member/Home/Index">Compte</a> / Ajoute un bien</span>
+        <h2>Ajoute un bien</h2>
+    </div>
+</div>
+<div class="container">
+    <div class="spacer">
+        <div class="row register">
+            <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="text" class="form-control" placeholder="Titre" name="Titre">
+                    @Html.ValidationMessageFor(model => model.Titre, "", new { @class = "text-danger" })
+                    <input type="text" class="form-control" placeholder="Description courte" name="DescCourte">
+                    @Html.ValidationMessageFor(model => model.DescCourte, "", new { @class = "text-danger" })
+                    <input type="text" class="form-control" placeholder="Description longue" name="DescLong">
+                    @Html.ValidationMessageFor(model => model.DescLong, "", new { @class = "text-danger" })
+                    <label for="IdPays">Choisis le pays </label>
+                    <select name="IdPays">
 
-        @foreach (Homeshare.Models.PaysListModel item in Model.PaysListModel)
-        {
-            <option value=@item.IdPays>@item.Libelle</option>
-        }
-    </select>
-    <br />
-    City: <input type="text" class="form-control" placeholder="City" name="Ville">
-    @Html.ValidationMessageFor(model => model.Ville, "", new { @class = "text-danger" })
-    CP: <input type="text" class="form-control" placeholder="CP" name="CodePostale">
-    @Html.ValidationMessageFor(model => model.CodePostale, "", new { @class = "text-danger" })
-    Number: <input type="number" class="form-control" placeholder="Number" name="Numero">
-    @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
-    Rue: <input type="text" class="form-control" placeholder="Street" name="Rue">
-    @Html.ValidationMessageFor(model => model.Rue, "", new { @class = "text-danger" })
-    Photo: <input type="text" class="form-control" placeholder="Photo" name="Photo">
-    @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
-    <label for="NombrePerson">People: </label>
-    <select name="NombrePerson">
+                        @foreach (Homeshare.Models.PaysListModel item in Model.PaysListModel)
+                        {
+                            <option value=@item.IdPays>@item.Libelle</option>
+                        }
+                    </select>
+                    <br />
+                    <input type="text" class="form-control" placeholder="Ville" name="Ville">
+                    @Html.ValidationMessageFor(model => model.Ville, "", new { @class = "text-danger" })
+                    <input type="text" class="form-control" placeholder="Code postal" name="CodePostale">
+                    @Html.ValidationMessageFor(model => model.CodePostale, "", new { @class = "text-danger" })
+                    <input type="number" class="form-control" placeholder="Numero" name="Numero">
+                    @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                    <input type="text" class="form-control" placeholder="Rue" name="Rue">
+                    @Html.ValidationMessageFor(model => model.Rue, "", new { @class = "text-danger" })
+                    <input type="text" class="form-control" placeholder="Photo" name="Photo">
+                    @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+                    <label for="NombrePerson">Capacité </label>
+                    <select name="NombrePerson">
 
-        @for (int i = 1; i < 11; i++)
-        {
-            <option value=@i>@i</option>
-        }
+                        @for (int i = 1; i < 11; i++)
+                        {
+                            <option value=@i>@i</option>
+                        }
 
-    </select>
-    <br />
-    Insurance: <input type="checkbox" class="form-control" placeholder="Insurance" name="AssuranceObligatoire">
-    @Html.ValidationMessageFor(model => model.AssuranceObligatoire, "", new { @class = "text-danger" })
-    Is Enabled: <input type="checkbox" class="form-control" placeholder="Is Enabled" name="IsEnabled">
-    @Html.ValidationMessageFor(model => model.IsEnabled, "", new { @class = "text-danger" })
-    Latitude: <input type="number" class="form-control" placeholder="Latitude" name="Latitude">
-    @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
-    Longitude: <input type="number" class="form-control" placeholder="Longitude" name="Longitude">
-    @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
+                    </select>
+                    <br />
+                    <input type="checkbox" class="form-control" placeholder="Assurance obligatoire" name="AssuranceObligatoire">
+                    @Html.ValidationMessageFor(model => model.AssuranceObligatoire, "", new { @class = "" })
+                    <input type="checkbox" class="form-control" placeholder="Is Enabled" name="IsEnabled">
+                    @Html.ValidationMessageFor(model => model.IsEnabled, "", new { @class = "text-danger" })
+                    <input type="number" class="form-control" placeholder="Latitude" name="Latitude">
+                    @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
+                    <input type="number" class="form-control" placeholder="Longitude" name="Longitude">
+                    @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
+                    <button type="submit" class="btn btn-success" name="Submit">Publier</button>
+                </form>
 
-    <button type="submit" class="btn btn-success" name="Submit">Publish</button>
-</form>
+                <div>
 
-<div>
-    @Html.ActionLink("Back to My Profile", "Index")
+                </div>
+                <br/>
+                @Html.ActionLink("Retour", "Index")
+            </div>
+
+        </div>
+    </div>
 </div>

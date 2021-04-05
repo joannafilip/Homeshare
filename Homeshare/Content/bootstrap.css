@@ -831,6 +831,10 @@ pre code {
   margin-right: -15px;
   margin-left: -15px;
 }
+.row2 {
+    margin-right: -50px;
+    margin-left: 240px;
+}
 
 .row:before,
 .row:after {

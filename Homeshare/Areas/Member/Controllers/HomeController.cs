@@ -46,7 +46,7 @@ namespace Homeshare.Areas.Member.Controllers
             return RedirectToAction("Index", "Home", new { area = "" });
 
         }
-        //[HttpGet]
+
         public ActionResult Logout()
         {
             Session.Abandon();

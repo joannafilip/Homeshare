@@ -16,11 +16,11 @@
                                 <p></p>
                                 @if (@Model.TopBienEchangeModel[i].IsEnabled == true)
                                 {
-                                    <cite>Available</cite>
+                                    <cite>Disponible</cite>
                                 }
                                 else
                                 {
-                                    <cite>Not Available</cite>
+                                    <cite></cite>
                                 }
                             </blockquote>
                         </div>
@@ -37,11 +37,11 @@
                                 <p></p>
                                 @if (@Model.TopBienEchangeModel[i].IsEnabled == true)
                                 {
-                                    <cite>Available</cite>
+                                    <cite>Disponible</cite>
                                 }
                                 else
                                 {
-                                    <cite>Not Available</cite>
+                                    <cite></cite>
                                 }
 
                             </blockquote>
@@ -103,8 +103,8 @@
 
                 </div>
                 <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-                    <p>Join now and get updated with all the properties deals.</p>
-                    <button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Login</button>
+                    <p></p>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Me connecter</button>
                 </div>
             </div>
         </div>
@@ -113,8 +113,8 @@
 <!-- banner -->
 <div class="container">
     <div class="properties-listing spacer">
-        <a href="/Home/Properties" class="pull-right viewall">View All Listing</a>
-        <h2>Lastly Added Properties</h2>
+        <a href="/Home/Properties" class="pull-right viewall">Tous les biens</a>
+        <h2>Récemment ajoutés</h2>
         <div id="owl-example" class="owl-carousel">
             @foreach (Homeshare.Models.BienEchangeModel item in Model.TopBienEchangeModel)
             {
@@ -132,7 +132,7 @@
 
             </div>
             <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
-                <h3>Recommended Properties</h3>
+                <h3>Biens recommandés</h3>
                 <div id="myCarousel" class="carousel slide">
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -166,7 +166,7 @@
                                         <div class="col-lg-8">
                                             <h5><a href="@Url.Action("Property", "Home", new { id = Model.MeilleursAvis[i].IdBien})">@Model.MeilleursAvis[i].Titre</a></h5>
                                             <p class="price">Note: @Model.MeilleursAvis[i].Note</p>
-                                            <a href="@Url.Action("Property", "Home", new { id = Model.MeilleursAvis[i].IdBien})" class="more">More Detail</a>
+                                            <a href="@Url.Action("Property", "Home", new { id = Model.MeilleursAvis[i].IdBien})" class="more">Plus de détails</a>
                                         </div>
                                     </div>
                                 </div>

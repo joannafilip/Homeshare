@@ -3,7 +3,7 @@
     <div class="image-holder">
         <img src="~/images/Biens/@Model.IdMembre/@Model.Photo" class="img-responsive" style="height : 150px ;width: 250px;" alt="properties" />
         @if (@Model.IsEnabled == true)
-        {<div class="status sold">Available</div> }
+        {<div class="status sold">Disponible</div> }
         else
         {<div class="status sold"></div>}
     </div>
@@ -14,5 +14,5 @@
             @Model.NombrePerson
         </span>
     </div>
-    <a class="btn btn-primary" href="@Url.Action("Property", "Home", new { id = @Model.IdBien})">View Details</a>
+    <a class="btn btn-primary" href="@Url.Action("Property", "Home", new { id = @Model.IdBien})">Plus de détails</a>
 </div>
