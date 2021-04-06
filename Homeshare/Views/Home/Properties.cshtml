@@ -39,14 +39,14 @@
                                 </select>
                             </div>
                         </div>*@
-                        <button class="btn btn-primary" type="submit">Find Now</button>
+                        <button class="btn btn-primary" type="submit">Confirmer</button>
                     </form>
                 </div>
 
 
 
                 <div class="hot-properties hidden-xs">
-                    <h4>Hot Properties</h4>
+                    <h4>Les plus récents</h4>
                     @foreach (Homeshare.Models.BienEchangeModel item in Model.HotProperties)
                     {
                         <div class="row">
@@ -64,7 +64,7 @@
 
             <div class="col-lg-9 col-sm-8">
                 <div class="sortby clearfix">
-                    <div class="pull-left result">Showing: 12 of 100 </div>
+                    <div class="pull-left result">Actuellement affichés : 4 de @Model.CountBiens biens</div>
                     <div class="pull-right">
                         <form action="/Home/Product" method="get" >
                                 <div class="col-1">

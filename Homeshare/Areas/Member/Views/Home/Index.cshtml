@@ -1,9 +1,9 @@
 ﻿@model Homeshare.Models.RegisterModel
 
-@{
+@*@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}*@
 
 @Styles.Render("~/Content/profil")
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="@ProfilePhoto" alt="" />
+                    <img src="@ProfilePhoto" alt="" style ="height: 180px"/>
                     <a href="/Member/Home/EditPhoto" class="file btn btn-lg btn-primary">
                         Change photo
                     </a>

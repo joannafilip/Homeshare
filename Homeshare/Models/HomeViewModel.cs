@@ -17,14 +17,15 @@ namespace Homeshare.Models
         private List<BienEchangeModel> _allProperties;
         private List<BienEchangeModel> _hotProperties;
         private BienEchangeModel _targetBien;
-        private int _maxProperty, _maxPage;
+        private int _maxProperty, _maxPage, _countBiens;
 
         public HomeViewModel()
         {
             TopBienEchangeModel = ctx.Get12DernierBiens();
             MeilleursAvis = ctx.GetMeilleursAvis();
             AllProperties = ctx.GetAllProperties();
-            HotProperties = ctx.GetHotProperties(); 
+            HotProperties = ctx.GetHotProperties();
+            CountBiens = ctx.CountProperties();
 
             MaxProperty = ctx.CountProperties();
             if ((MaxProperty % 3) == 0)
@@ -152,5 +153,18 @@ namespace Homeshare.Models
                 _maxPage = value;
             }
         }
+        public int CountBiens
+        {
+            get
+            {
+                return _countBiens;
+            }
+
+            set
+            {
+                _countBiens = value;
+            }
+        }
+
     }
 }

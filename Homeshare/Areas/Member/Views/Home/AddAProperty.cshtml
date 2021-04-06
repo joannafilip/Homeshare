@@ -12,7 +12,7 @@
 </div>
 <div class="container">
     <div class="spacer">
-        <div class="row register">
+        <div class="row4 register">
             <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
                 <form method="post">
                     @Html.AntiForgeryToken()
@@ -35,7 +35,7 @@
                     @Html.ValidationMessageFor(model => model.Ville, "", new { @class = "text-danger" })
                     <input type="text" class="form-control" placeholder="Code postal" name="CodePostale">
                     @Html.ValidationMessageFor(model => model.CodePostale, "", new { @class = "text-danger" })
-                    <input type="number" class="form-control" placeholder="Numero" name="Numero">
+                    <input type="number" class="form-control" placeholder="Numéro" name="Numero">
                     @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
                     <input type="text" class="form-control" placeholder="Rue" name="Rue">
                     @Html.ValidationMessageFor(model => model.Rue, "", new { @class = "text-danger" })

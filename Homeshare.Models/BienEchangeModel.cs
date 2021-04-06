@@ -10,7 +10,7 @@ namespace Homeshare.Models
    public class BienEchangeModel
     {
         private string _titre, _descCourte, _descLong, _ville, _rue, _numero, _codePostal, _photo, _latitude, _longitude, _pays;
-        private int _idBien, _nombrePerson, _idPays, _idMembre, _note, _maxProperty, _maxPage;
+        private int _idBien, _nombrePerson, _idPays, _idMembre, _note;
         private bool _assuranceObligatoire, _isEnabled;
         private DateTime _disabledDate, _dateCreation;
         private List<PaysListModel> _paysListModel;
@@ -283,30 +283,6 @@ namespace Homeshare.Models
             set
             {
                 _paysListModel = value;
-            }
-        }
-        public int MaxProperty
-        {
-            get
-            {
-                return _maxProperty;
-            }
-
-            set
-            {
-                _maxProperty = value;
-            }
-        }
-        public int MaxPage
-        {
-            get
-            {
-                return _maxPage;
-            }
-
-            set
-            {
-                _maxPage = value;
             }
         }
     }
