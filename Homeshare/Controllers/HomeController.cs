@@ -68,13 +68,13 @@ namespace Homeshare.Controllers
                 return View();
             }
         }
-        public ActionResult Properties(int page = 1, string searchString = null)
+        public ActionResult Properties(int page = 1, string searchString = null, string sortOrder = "")
         {
             DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
             //ViewBag.DateSort = String.IsNullOrEmpty(sortOrder) ? "date_asc" : "date_desc";
-            //ViewBag.NameSort = sortOrder == "name_asc" ? "" : "name_asc";
+            //ViewBag.TitreSort = sortOrder == "titre_desc" ? "" : "titre_desc";
             HomeViewModel hvm = new HomeViewModel();
-            hvm.PaginateProperty(page, searchString);
+            hvm.PaginateProperty(page, searchString, sortOrder);
             return View(hvm);
         }
         public ActionResult Property(int id)

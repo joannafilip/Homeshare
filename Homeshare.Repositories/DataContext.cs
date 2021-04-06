@@ -97,6 +97,7 @@ namespace Homeshare.Repositories
                 b.IdMembre = property.IdMembre;
                 b.Pays = property.Libelle;
                 b.IdBien = property.IdBien;
+                b.DateCreation = property.DateCreation;
                 bem.Add(b);
             }
             return bem;
@@ -136,10 +137,10 @@ namespace Homeshare.Repositories
         {
             return _bienEchangeRepo.Get().Count();
         }
-        public List<BienEchangeModel> GetPropertyModelByPage(int page, string searchString)
+        public List<BienEchangeModel> GetPropertyModelByPage(int page, string searchString, string sortOrder)
         {
             List<BienEchangeModel> bem = new List<BienEchangeModel>();
-            List<BienEchangeEntity> allPropertiesFromDb = ((BienEchangeRepository)_bienEchangeRepo).GetPropertyEntityByPage(page, searchString);
+            List<BienEchangeEntity> allPropertiesFromDb = ((BienEchangeRepository)_bienEchangeRepo).GetPropertyEntityByPage(page, searchString, sortOrder);
 
             foreach (BienEchangeEntity property in allPropertiesFromDb)
             {
@@ -157,13 +158,14 @@ namespace Homeshare.Repositories
                 b.IdMembre = property.IdMembre;
                 b.Pays = property.Libelle;
                 b.IdBien = property.IdBien;
+                b.DateCreation = property.DateCreation;
                 bem.Add(b);
             }
             return bem;
         }
-        public int CountPropertiesAllPage(int page, string searchString)
+        public int CountPropertiesAllPage(int page, string searchString, string sortOrder)
         {
-            return ((BienEchangeRepository)_bienEchangeRepo).GetPropertiesEntitiesAllPage(page, searchString).Count();
+            return ((BienEchangeRepository)_bienEchangeRepo).GetPropertiesEntitiesAllPage(page, searchString, sortOrder).Count();
         }
         public List<BienEchangeModel> GetBiensMembre(RegisterModel bm )
         {

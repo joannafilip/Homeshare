@@ -39,12 +39,12 @@ namespace Homeshare.Models
 
 
         }
-        public void PaginateProperty(int page = 1, string searchString = null)
+        public void PaginateProperty(int page = 1, string searchString = null, string sortOrder = null)
         {
-            AllProperties = ctx.GetPropertyModelByPage(page, searchString);
+            AllProperties = ctx.GetPropertyModelByPage(page, searchString, sortOrder);
             if (searchString != null)
             {
-                MaxProperty = ctx.CountPropertiesAllPage(page, searchString);
+                MaxProperty = ctx.CountPropertiesAllPage(page, searchString, sortOrder);
                 if ((MaxProperty % 3) == 0)
                 {
                     MaxPage = MaxProperty / 3;

@@ -52,83 +52,63 @@ namespace Homeshare.Repositories
             return base.Get(requete);
         }
 
-        public List<BienEchangeEntity> GetPropertyEntityByPage(int page, string searchString)
+        public List<BienEchangeEntity> GetPropertyEntityByPage(int page, string searchString, string sortOrder)
         {
             string requete = $@"Select * from V_GetAllProperties";
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 requete += " WHERE Titre LIKE '%" + searchString + "%' ";
-                //if (!String.IsNullOrEmpty(type))
-                //{
-                //    requete += $" AND Type = '{type}' ";
-                //}
-            }
-            else
-            {
-                //if (!String.IsNullOrEmpty(type))
-                //{
-                //    requete += $" WHERE Type = '{type}' ";
-                //}
             }
 
-            //switch (sortOrder)
-            //{
-            //    case "name_desc":
-            //        requete += " ORDER BY NomProduit DESC ";
-            //        break;
-            //    case "date_asc":
-            //        requete += " ORDER BY DatePeremption ASC ";
-            //        break;
-            //    case "date_desc":
-            //        requete += " ORDER BY DatePeremption DESC ";
-            //        break;
-            //    default:
-            //        requete += " ORDER BY NomProduit ";
-            //        break;
-            //}
+            switch (sortOrder)
+            {
+                case "titre_desc":
+                    requete += " ORDER BY Titre ASC ";
+                    break;
+                case "date_asc":
+                    requete += " ORDER BY DateCreation ASC ";
+                    break;
+                case "date_desc":
+                    requete += " ORDER BY DateCreation DESC ";
+                    break;
+                default:
+                    requete += " ORDER BY Titre ";
+                    break;
+            }
 
 
             int nbPerPage = 4;
             int skip = (page - 1) * nbPerPage;
-            requete += $@" ORDER BY Titre OFFSET {skip} ROWS 
+            //requete += $@" ORDER BY Titre OFFSET {skip} ROWS si sons sortOrder
+            requete += $@" OFFSET {skip} ROWS 
                         FETCH NEXT {nbPerPage} ROWS ONLY ";
             return base.Get(requete);
         }
-        public List<BienEchangeEntity> GetPropertiesEntitiesAllPage(int page, string searchString)
+        public List<BienEchangeEntity> GetPropertiesEntitiesAllPage(int page, string searchString, string sortOrder)
         {
             string requete = $@"SELECT * from V_GetAllProperties";
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 requete += " WHERE Titre LIKE '%" + searchString + "%' ";
-                //if (!String.IsNullOrEmpty(type))
-                //{
-                //    requete += $" AND Type = '{type}' ";
-                //}
+
             }
-            //else
-            //{
-            //    //if (!String.IsNullOrEmpty(type))
-            //    //{
-            //    //    requete += $" WHERE Type = '{type}' ";
-            //    //}
-            //}
-            //switch (sortOrder)
-            //{
-            //    case "name_desc":
-            //        requete += " ORDER BY NomProduit DESC ";
-            //        break;
-            //    case "date_asc":
-            //        requete += " ORDER BY DatePeremption ASC ";
-            //        break;
-            //    case "date_desc":
-            //        requete += " ORDER BY DatePeremption DESC ";
-            //        break;
-            //    default:
-            //        requete += " ORDER BY NomProduit ";
-            //        break;
-            //}
+            switch (sortOrder)
+            {
+                case "titre_desc":
+                    requete += " ORDER BY Titre DESC ";
+                    break;
+                case "date_asc":
+                    requete += " ORDER BY DateCreation ASC ";
+                    break;
+                case "date_desc":
+                    requete += " ORDER BY DateCreation DESC ";
+                    break;
+                default:
+                    requete += " ORDER BY Titre ";
+                    break;
+            }
 
             return base.Get(requete);
         }

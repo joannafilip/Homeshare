@@ -6,9 +6,9 @@
             <div class="col-lg-3 col-sm-4 ">
 
                 <div class="search-form">
-                    <h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
+                    <h4><span class="glyphicon glyphicon-search"></span>Rechercher</h4>
                     <form action="/Home/Properties" method="get">
-                        <input type="text" class="form-control" name="searchString" id="searchString" placeholder="Search of Properties">
+                        <input type="text" class="form-control" name="searchString" id="searchString" placeholder="Rechercher un bien">
 
                         @*<div class="row">
                             <div class="col-lg-5">
@@ -66,11 +66,14 @@
                 <div class="sortby clearfix">
                     <div class="pull-left result">Showing: 12 of 100 </div>
                     <div class="pull-right">
-                        <select class="form-control">
-                            <option>Sort by</option>
-                            <option>Price: Low to High</option>
-                            <option>Price: High to Low</option>
-                        </select>
+                        <form action="/Home/Product" method="get" >
+                                <div class="col-1">
+                                    <div class="list-group" id="list-tab" role="tablist">
+                                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="@Url.Action("Properties", "Home", new { sortOrder = "titre_asc" })" role="tab" aria-controls="profile">titre</a>
+                                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="@Url.Action("Properties", "Home", new { sortOrder = "date_desc" })" role="tab" aria-controls="messages">les plus récents</a>
+                                    </div>
+                                </div>
+                        </form>
                     </div>
 
                 </div>
