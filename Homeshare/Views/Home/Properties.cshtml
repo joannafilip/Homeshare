@@ -79,14 +79,15 @@
                     <!-- properties -->
                     @foreach (Homeshare.Models.BienEchangeModel item in Model.AllProperties)
                     {
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-3 col-sm-6">
 
                             @{
                                 Html.RenderPartial("~/Views/Shared/_bien.cshtml", item);
                             }
-                          
+
                         </div>
-                     }
+                    }
+                </div>
                      <!-- properties -->
                             @{
                                 Html.RenderPartial("~/Views/Shared/_Pagination.cshtml", new ViewDataDictionary { { "MaxPage", Model.MaxPage } });
@@ -94,7 +95,6 @@
                         </div>
 
                     </div>
-                </div>
             </div>
         </div>
-    </div>
+

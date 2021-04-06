@@ -16,12 +16,16 @@ namespace Homeshare.Models
         private List<BienEchangeModel> _meilleursAvis;
         private List<BienEchangeModel> _allProperties;
         private List<BienEchangeModel> _hotProperties;
-        private List<BienEchangeModel> _properties;
         private BienEchangeModel _targetBien;
         private int _maxProperty, _maxPage;
 
         public HomeViewModel()
         {
+            TopBienEchangeModel = ctx.Get12DernierBiens();
+            MeilleursAvis = ctx.GetMeilleursAvis();
+            AllProperties = ctx.GetAllProperties();
+            HotProperties = ctx.GetHotProperties(); 
+
             MaxProperty = ctx.CountProperties();
             if ((MaxProperty % 3) == 0)
             {
@@ -32,17 +36,12 @@ namespace Homeshare.Models
                 double nbPage = MaxProperty / 3;
                 MaxPage = (int)Math.Floor(nbPage) + 1;
             }
-            TopBienEchangeModel = ctx.Get12DernierBiens();
-            MeilleursAvis = ctx.GetMeilleursAvis();
-            AllProperties = ctx.GetAllProperties();
-            HotProperties = ctx.GetHotProperties();
 
-        
 
         }
         public void PaginateProperty(int page = 1, string searchString = null)
         {
-            Properties = ctx.GetPropertyByPage(page, searchString);
+            AllProperties = ctx.GetPropertyModelByPage(page, searchString);
             if (searchString != null)
             {
                 MaxProperty = ctx.CountPropertiesAllPage(page, searchString);
@@ -115,18 +114,6 @@ namespace Homeshare.Models
             set
             {
                 _hotProperties = value;
-            }
-        }
-        public List<BienEchangeModel> Properties
-        {
-            get
-            {
-                return _properties;
-            }
-
-            set
-            {
-                _properties = value;
             }
         }
         public BienEchangeModel TargetBien

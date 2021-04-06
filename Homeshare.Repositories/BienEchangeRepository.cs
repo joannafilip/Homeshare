@@ -52,7 +52,7 @@ namespace Homeshare.Repositories
             return base.Get(requete);
         }
 
-        public List<BienEchangeEntity> GetPropertyByPage(int page, string searchString)
+        public List<BienEchangeEntity> GetPropertyEntityByPage(int page, string searchString)
         {
             string requete = $@"Select * from V_GetAllProperties";
 
@@ -89,15 +89,15 @@ namespace Homeshare.Repositories
             //}
 
 
-            int nbPerPage = 3;
+            int nbPerPage = 4;
             int skip = (page - 1) * nbPerPage;
             requete += $@" ORDER BY Titre OFFSET {skip} ROWS 
                         FETCH NEXT {nbPerPage} ROWS ONLY ";
             return base.Get(requete);
         }
-        public List<BienEchangeEntity> GetPropertiesAllPage(int page, string searchString)
+        public List<BienEchangeEntity> GetPropertiesEntitiesAllPage(int page, string searchString)
         {
-            string requete = $@"SELECT * FROM V_GetAllProperties";
+            string requete = $@"SELECT * from V_GetAllProperties";
 
             if (!String.IsNullOrEmpty(searchString))
             {

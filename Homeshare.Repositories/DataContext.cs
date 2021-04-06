@@ -136,10 +136,10 @@ namespace Homeshare.Repositories
         {
             return _bienEchangeRepo.Get().Count();
         }
-        public List<BienEchangeModel> GetPropertyByPage(int page, string searchString)
+        public List<BienEchangeModel> GetPropertyModelByPage(int page, string searchString)
         {
             List<BienEchangeModel> bem = new List<BienEchangeModel>();
-            List<BienEchangeEntity> allPropertiesFromDb = ((BienEchangeRepository)_bienEchangeRepo).GetPropertyByPage(page, searchString);
+            List<BienEchangeEntity> allPropertiesFromDb = ((BienEchangeRepository)_bienEchangeRepo).GetPropertyEntityByPage(page, searchString);
 
             foreach (BienEchangeEntity property in allPropertiesFromDb)
             {
@@ -163,7 +163,7 @@ namespace Homeshare.Repositories
         }
         public int CountPropertiesAllPage(int page, string searchString)
         {
-            return ((BienEchangeRepository)_bienEchangeRepo).GetPropertyByPage(page, searchString).Count();
+            return ((BienEchangeRepository)_bienEchangeRepo).GetPropertiesEntitiesAllPage(page, searchString).Count();
         }
         public List<BienEchangeModel> GetBiensMembre(RegisterModel bm )
         {
@@ -299,7 +299,6 @@ namespace Homeshare.Repositories
             }
 
         }
-
         public bool SaveContact (ContactModel cm)
         {
             MessageEntity me = new MessageEntity();
@@ -310,8 +309,6 @@ namespace Homeshare.Repositories
 
             return _messageRepo.Insert(me);
         }
-
-
         public bool EditMemberPhoto(RegisterModel rm)
         {
             RegisterEntity re = new RegisterEntity();

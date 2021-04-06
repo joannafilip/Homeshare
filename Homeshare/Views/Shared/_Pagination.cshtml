@@ -1,4 +1,4 @@
-﻿<div class="center">
+﻿<div>
     <ul class="pagination">
         @{
             int MaxPage = ViewData["MaxPage"] == null ? 0 : int.Parse(ViewData["MaxPage"].ToString());
@@ -31,7 +31,7 @@
 
             if (prev > 0)
             {
-                <li class="page-item"><a href="@URLprev" class="page-link"><span class="fa fa-angle-double-left"></span></a></li>
+                <li class="page-item"><a href="@URLprev" class="page-link"><span class="fa fa-angle-double-left">«</span></a></li>
             }
             for (int i = current - 1; i < current && i < MaxPage; i++)
             {
@@ -69,7 +69,7 @@
 
             if (next <= MaxPage)
             {
-                <li class="page-item"><a href="@URLnext" class="page-link">Next</a></li>
+                <li class="page-item"><a href="@URLnext" class="page-link">»</a></li>
 
             }
         }
