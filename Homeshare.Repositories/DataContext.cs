@@ -43,6 +43,7 @@ namespace Homeshare.Repositories
                 b.IdMembre = bien.IdMembre;
                 b.Pays = bien.Libelle;
                 b.IdBien = bien.IdBien;
+                b.DateCreation= bien.DateCreation;
 
 
                 bem.Add(b);

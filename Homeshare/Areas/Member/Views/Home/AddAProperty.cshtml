@@ -51,7 +51,9 @@
 
                     </select>
                     <br />
+                    Assurance obligatoire
                     <input type="checkbox" class="form-control" placeholder="Assurance obligatoire" name="AssuranceObligatoire">
+                    Disponible
                     @Html.ValidationMessageFor(model => model.AssuranceObligatoire, "", new { @class = "" })
                     <input type="checkbox" class="form-control" placeholder="Is Enabled" name="IsEnabled">
                     @Html.ValidationMessageFor(model => model.IsEnabled, "", new { @class = "text-danger" })

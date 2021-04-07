@@ -13,6 +13,7 @@ namespace Homeshare.Models
         private DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
         private LoginModel _loginModel;
         private List<BienEchangeModel> _topBienEchangeModel;
+        private List<BienEchangeModel> _top5Biens;
         private List<BienEchangeModel> _meilleursAvis;
         private List<BienEchangeModel> _allProperties;
         private List<BienEchangeModel> _hotProperties;
@@ -22,6 +23,7 @@ namespace Homeshare.Models
         public HomeViewModel()
         {
             TopBienEchangeModel = ctx.Get12DernierBiens();
+            Top5Biens = ctx.Get12DernierBiens();
             MeilleursAvis = ctx.GetMeilleursAvis();
             AllProperties = ctx.GetAllProperties();
             HotProperties = ctx.GetHotProperties();
@@ -79,6 +81,18 @@ namespace Homeshare.Models
             set
             {
                 _topBienEchangeModel = value;
+            }
+        }
+        public List<BienEchangeModel> Top5Biens
+        {
+            get
+            {
+                return _top5Biens;
+            }
+
+            set
+            {
+                _top5Biens = value;
             }
         }
         public List<BienEchangeModel> MeilleursAvis

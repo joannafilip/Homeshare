@@ -10,11 +10,11 @@
                     <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-@i"></div>
-                            <h2><a href="#">@Model.TopBienEchangeModel[i].Titre</a></h2>
+                            <h2><a href="#">@Model.Top5Biens[i].Titre</a></h2>
                             <blockquote>
-                                <p class="location"><span class="glyphicon glyphicon-map-marker">@Model.TopBienEchangeModel[i].Ville</span> </p>
+                                <p class="location"><span class="glyphicon glyphicon-map-marker">@Model.Top5Biens[i].Ville</span> </p>
                                 <p></p>
-                                @if (@Model.TopBienEchangeModel[i].IsEnabled == true)
+                                @if (@Model.Top5Biens[i].IsEnabled == true)
                                 {
                                     <cite>Disponible</cite>
                                 }
@@ -31,11 +31,11 @@
                     <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-@i"></div>
-                            <h2><a href="#">@Model.TopBienEchangeModel[i].Titre</a></h2>
+                            <h2><a href="#">@Model.Top5Biens[i].Titre</a></h2>
                             <blockquote>
-                                <p class="location"><span class="glyphicon glyphicon-map-marker">@Model.TopBienEchangeModel[i].Ville</span></p>
+                                <p class="location"><span class="glyphicon glyphicon-map-marker">@Model.Top5Biens[i].Ville</span></p>
                                 <p></p>
-                                @if (@Model.TopBienEchangeModel[i].IsEnabled == true)
+                                @if (@Model.Top5Biens[i].IsEnabled == true)
                                 {
                                     <cite>Disponible</cite>
                                 }
