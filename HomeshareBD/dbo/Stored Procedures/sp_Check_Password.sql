@@ -6,7 +6,7 @@ AS
 	DECLARE @hPassword NVARCHAR(256)
 	DECLARE @salt CHAR(8)
 	DECLARE @newPassword NVARCHAR(256)
-	SELECT @salt = salt, @hPassword = Password FROM Membre WHERE login = @login
+	SELECT @salt = salt, @hPassword = Password FROM Membre WHERE Membre.Login = @login
 	SELECT @newPassword = dbo.SF_EncryptedPassword (@password, @salt)
 	
 	IF (@newPassword = @hPassword)

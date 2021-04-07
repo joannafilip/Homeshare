@@ -26,7 +26,7 @@ SELECT TOP(5)
 	  Longitude, 
 	  BienEchange.idMembre AS IdMembre, 
       BienEchange.DateCreation AS DateCreation,
-	  AvisMembreBien.note AS Note
+	  AvisMembreBien.[note] AS Note
 FROM  BienEchange INNER JOIN Pays ON Pays.idPays = BienEchange.Pays 
 INNER JOIN Membre ON Membre.idMembre = BienEchange.idMembre
 INNER JOIN AvisMembreBien ON AvisMembreBien.idBien = BienEchange.idBien

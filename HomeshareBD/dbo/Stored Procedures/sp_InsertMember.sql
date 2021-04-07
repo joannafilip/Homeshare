@@ -12,5 +12,5 @@ AS
 DECLARE @salt CHAR(8)
 	SET @salt = [dbo].SF_GenerateSalt()
 	INSERT INTO [Membre]([Nom], [Prenom], [Email], [Login], [Password], [Salt], [Telephone],[Pays] )
-	OUTPUT inserted.IdMembre
+	OUTPUT inserted.[IdMembre]
 	VALUES (@nom, @prenom, @email, @login, dbo.SF_EncryptedPassword(@password, @salt),@salt, @telephone, @idPays)

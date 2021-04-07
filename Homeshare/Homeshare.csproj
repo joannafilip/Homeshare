@@ -153,8 +153,6 @@
     <Content Include="images\agents\2.jpg" />
     <Content Include="images\agents\3.jpg" />
     <Content Include="images\agents\4.jpg" />
-    <Content Include="images\banner.jpg" />
-    <Content Include="images\bg.jpg" />
     <Content Include="images\Biens\7\1.jpg" />
     <Content Include="images\Biens\7\2.jpg" />
     <Content Include="images\blog\1.jpg" />
@@ -165,11 +163,7 @@
     <Content Include="images\facebook.png" />
     <Content Include="images\instagram.png" />
     <Content Include="images\linkedin.png" />
-    <Content Include="images\logo.png" />
-    <Content Include="images\logo2.jpg" />
     <Content Include="images\logo3.jpg" />
-    <Content Include="images\properties\1.jpg" />
-    <Content Include="images\properties\2.jpg" />
     <Content Include="images\properties\3.jpg" />
     <Content Include="images\properties\4.jpg" />
     <Content Include="images\properties\5.jpg" />
